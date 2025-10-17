@@ -1,0 +1,252 @@
+{"idx": 0, "keys": ["price_jsonld"]}
+{"idx": 1, "keys": ["currency_jsonld"]}
+{"idx": 2, "keys": ["sku"]}
+{"idx": 3, "keys": ["mpn"]}
+{"idx": 6, "keys": ["Manufacturers Part Number"]}
+{"idx": 7, "keys": ["brand", "Brand"]}
+{"idx": 8, "keys": ["Material"]}
+{"idx": 9, "keys": ["Package Quantity"]}
+{"idx": 10, "keys": ["Description"]}
+{"idx": 11, "keys": ["Country of Origin"]}
+{"idx": 12, "keys": ["Length"]}
+{"idx": 13, "keys": ["Finish"]}
+{"idx": 14, "keys": ["Size"]}
+{"idx": 15, "keys": ["Unit of Measurement"]}
+{"idx": 16, "keys": ["Type"]}
+{"idx": 17, "keys": ["Color"]}
+{"idx": 18, "keys": ["Height"]}
+{"idx": 19, "keys": ["Width"]}
+{"idx": 20, "keys": ["Head"]}
+{"idx": 21, "keys": ["Grade"]}
+{"idx": 22, "keys": ["Warranty"]}
+{"idx": 23, "keys": ["Certifications"]}
+{"idx": 24, "keys": ["Weight"]}
+{"idx": 25, "keys": ["Diameter"]}
+{"idx": 26, "keys": ["Thread"]}
+{"idx": 27, "keys": ["Gauge"]}
+{"idx": 28, "keys": ["Style"]}
+{"idx": 29, "keys": ["Weight Capacity"]}
+{"idx": 30, "keys": ["Includes"]}
+{"idx": 31, "keys": ["Thread Size"]}
+{"idx": 32, "keys": ["For Use With"]}
+{"idx": 33, "keys": ["Series"]}
+{"idx": 34, "keys": ["Full or Partial Thread"]}
+{"idx": 35, "keys": ["Number of Pieces"]}
+{"idx": 36, "keys": ["Depth"]}
+{"idx": 37, "keys": ["Thread Length"]}
+{"idx": 38, "keys": ["Load Capacity Range"]}
+{"idx": 39, "keys": ["Thickness"]}
+{"idx": 40, "keys": ["Drive"]}
+{"idx": 41, "keys": ["Base Diameter"]}
+{"idx": 42, "keys": ["Design"]}
+{"idx": 43, "keys": ["Threading Type"]}
+{"idx": 44, "keys": ["Alloy"]}
+{"idx": 45, "keys": ["Padlock Capacity"]}
+{"idx": 46, "keys": ["Installed Length"]}
+{"idx": 47, "keys": ["Crown"]}
+{"idx": 48, "keys": ["Body Material"]}
+{"idx": 49, "keys": ["Units"]}
+{"idx": 50, "keys": ["Inner Diameter"]}
+{"idx": 51, "keys": ["Fastener Collation"]}
+{"idx": 52, "keys": ["Interior or Exterior Use"]}
+{"idx": 53, "keys": ["Pin Diameter"]}
+{"idx": 54, "keys": ["Stud Length"]}
+{"idx": 55, "keys": ["Pin Length"]}
+{"idx": 56, "keys": ["Fire Rating"]}
+{"idx": 57, "keys": ["A/F"]}
+{"idx": 58, "keys": ["Mounting Distance"]}
+{"idx": 59, "keys": ["Spring Rate"]}
+{"idx": 60, "keys": ["Max Travel"]}
+{"idx": 61, "keys": ["Body Mount Material"]}
+{"idx": 62, "keys": ["Durometer"]}
+{"idx": 63, "keys": ["Cover Plate Material"]}
+{"idx": 64, "keys": ["Insert Material"]}
+{"idx": 65, "keys": ["Nose Material"]}
+{"idx": 66, "keys": ["Fits Door Thickness"]}
+{"idx": 67, "keys": ["End Pressure Start"]}
+{"idx": 68, "keys": ["End Pressure Full"]}
+{"idx": 69, "keys": ["Vertical Lifting Load"]}
+{"idx": 70, "keys": ["Mounting Location"]}
+{"idx": 71, "keys": ["Package Includes"]}
+{"idx": 72, "keys": ["Max Deflection"]}
+{"idx": 73, "keys": ["Adhesive"]}
+{"idx": 74, "keys": ["Set Screw Body Material"]}
+{"idx": 75, "keys": ["Ball Material"]}
+{"idx": 76, "keys": ["Knob Diameter"]}
+{"idx": 77, "keys": ["Mounting Dimensions"]}
+{"idx": 78, "keys": ["Cutting Point"]}
+{"idx": 79, "keys": ["Bumper Width"]}
+{"idx": 80, "keys": ["Bumper Height"]}
+{"idx": 81, "keys": ["Backing Material"]}
+{"idx": 82, "keys": ["Hardness"]}
+{"idx": 83, "keys": ["Door Handle Type"]}
+{"idx": 84, "keys": ["Thread Type"]}
+{"idx": 85, "keys": ["Body Finish"]}
+{"idx": 86, "keys": ["Lock Out"]}
+{"idx": 87, "keys": ["Lock Nut"]}
+{"idx": 88, "keys": ["Ball Height"]}
+{"idx": 89, "keys": ["Full Ball Diameter"]}
+{"idx": 90, "keys": ["Similar To"]}
+{"idx": 91, "keys": ["Top Screw/Rod Diameter"]}
+{"idx": 92, "keys": ["Drill Size"]}
+{"idx": 93, "keys": ["Max Load"]}
+{"idx": 94, "keys": ["Mount Height"]}
+{"idx": 95, "keys": ["Bolt Size"]}
+{"idx": 96, "keys": ["Deflection"]}
+{"idx": 97, "keys": ["Rated Load"]}
+{"idx": 98, "keys": ["Handle Length"]}
+{"idx": 99, "keys": ["Handle Type"]}
+{"idx": 100, "keys": ["Number of Screw Holes"]}
+{"idx": 101, "keys": ["Dimension H1"]}
+{"idx": 102, "keys": ["Dimension D2"]}
+{"idx": 103, "keys": ["Handle Height"]}
+{"idx": 104, "keys": ["Dimension H2"]}
+{"idx": 105, "keys": ["Deflection at Solid Load"]}
+{"idx": 106, "keys": ["Drive Type"]}
+{"idx": 107, "keys": ["Torque"]}
+{"idx": 108, "keys": ["Thread (D1)"]}
+{"idx": 109, "keys": ["Hex Key Size"]}
+{"idx": 110, "keys": ["Keyway"]}
+{"idx": 111, "keys": ["Pull Ring Diameter"]}
+{"idx": 112, "keys": ["Max Hole Spacing"]}
+{"idx": 113, "keys": ["Leveler Material"]}
+{"idx": 114, "keys": ["Locking Element"]}
+{"idx": 115, "keys": ["Start-End Pressure"]}
+{"idx": 116, "keys": ["Final End Pressure"]}
+{"idx": 117, "keys": ["Assembly Required"]}
+{"idx": 118, "keys": ["Assembled Width"]}
+{"idx": 119, "keys": ["Exit Type"]}
+{"idx": 120, "keys": ["Mount Hole Diameter"]}
+{"idx": 121, "keys": ["Tap Drill Size"]}
+{"idx": 122, "keys": ["Max User Codes"]}
+{"idx": 123, "keys": ["Strike"]}
+{"idx": 124, "keys": ["Body Diameter"]}
+{"idx": 125, "keys": ["Radius"]}
+{"idx": 126, "keys": ["Spindle Size"]}
+{"idx": 127, "keys": ["Threads per Inch"]}
+{"idx": 128, "keys": ["Thread (D2)"]}
+{"idx": 129, "keys": ["Bore Size"]}
+{"idx": 130, "keys": ["Swivel Angle"]}
+{"idx": 131, "keys": ["Flange Diameter"]}
+{"idx": 132, "keys": ["Combined Thickness"]}
+{"idx": 133, "keys": ["Female ID"]}
+{"idx": 134, "keys": ["Male ID"]}
+{"idx": 135, "keys": ["Flat Ball Diameter"]}
+{"idx": 136, "keys": ["Max Door Width"]}
+{"idx": 137, "keys": ["Square Size"]}
+{"idx": 138, "keys": ["Dimension L1"]}
+{"idx": 139, "keys": ["Dimension D1"]}
+{"idx": 140, "keys": ["Hooks Opening"]}
+{"idx": 141, "keys": ["Wire Thickness"]}
+{"idx": 142, "keys": ["RoHS Compliant"]}
+{"idx": 143, "keys": ["Max Door Thickness"]}
+{"idx": 144, "keys": ["Resistance"]}
+{"idx": 145, "keys": ["Base Height"]}
+{"idx": 146, "keys": ["Hole Center"]}
+{"idx": 147, "keys": ["Backset"]}
+{"idx": 148, "keys": ["Latch"]}
+{"idx": 149, "keys": ["Number of Keys"]}
+{"idx": 150, "keys": ["Dimension W"]}
+{"idx": 151, "keys": ["Hex Size"]}
+{"idx": 152, "keys": ["Dimension L2"]}
+{"idx": 153, "keys": ["Dimension L3"]}
+{"idx": 154, "keys": ["Dimension D3"]}
+{"idx": 155, "keys": ["Projection"]}
+{"idx": 156, "keys": ["Nose Length"]}
+{"idx": 157, "keys": ["Hole Diameter"]}
+{"idx": 158, "keys": ["Rating"]}
+{"idx": 159, "keys": ["Tray Dimensions"]}
+{"idx": 160, "keys": ["Container Material"]}
+{"idx": 161, "keys": ["Number of Items"]}
+{"idx": 162, "keys": ["Helicoil Equivalent"]}
+{"idx": 163, "keys": ["Recoil Equivalent"]}
+{"idx": 164, "keys": ["Handle Material"]}
+{"idx": 165, "keys": ["Int. Hex"]}
+{"idx": 166, "keys": ["D2 Thread"]}
+{"idx": 167, "keys": ["Recyclable"]}
+{"idx": 168, "keys": ["ANSI A156.16"]}
+{"idx": 169, "keys": ["Feet of Head"]}
+{"idx": 170, "keys": ["Back Pressure"]}
+{"idx": 171, "keys": ["Door Thickness"]}
+{"idx": 172, "keys": ["Accessory Type"]}
+{"idx": 173, "keys": ["Nut Size"]}
+{"idx": 174, "keys": ["Plate Length"]}
+{"idx": 175, "keys": ["Plate Width"]}
+{"idx": 176, "keys": ["Body Length"]}
+{"idx": 177, "keys": ["Nose Diameter"]}
+{"idx": 178, "keys": ["Flange Thickness"]}
+{"idx": 179, "keys": ["Screw Type"]}
+{"idx": 180, "keys": ["Dimension A"]}
+{"idx": 181, "keys": ["Dimension L"]}
+{"idx": 182, "keys": ["Dimension E"]}
+{"idx": 183, "keys": ["D Thread"]}
+{"idx": 184, "keys": ["Dimension D4"]}
+{"idx": 185, "keys": ["Staple Length"]}
+{"idx": 186, "keys": ["Nominal Flow Diameter"]}
+{"idx": 187, "keys": ["Interchange"]}
+{"idx": 188, "keys": ["Bypass Diameter"]}
+{"idx": 189, "keys": ["Audit Trail"]}
+{"idx": 190, "keys": ["Battery Life"]}
+{"idx": 191, "keys": ["Temperature Resistance"]}
+{"idx": 192, "keys": ["Stud"]}
+{"idx": 193, "keys": ["Top Diameter"]}
+{"idx": 194, "keys": ["Hole Size"]}
+{"idx": 195, "keys": ["Knob Material"]}
+{"idx": 196, "keys": ["Across Flats"]}
+{"idx": 197, "keys": ["Sight Glass Material"]}
+{"idx": 198, "keys": ["Gasket Material"]}
+{"idx": 199, "keys": ["Clearance"]}
+{"idx": 200, "keys": ["Screw Size"]}
+{"idx": 201, "keys": ["For Use with Make"]}
+{"idx": 202, "keys": ["Compatible Part/Model Number"]}
+{"idx": 203, "keys": ["Frame Color Family"]}
+{"idx": 204, "keys": ["Frame Material"]}
+{"idx": 205, "keys": ["Mil Thickness"]}
+{"idx": 206, "keys": ["Load @ Solid Weight"]}
+{"idx": 207, "keys": ["Coarse or Fine Thread"]}
+{"idx": 208, "keys": ["Overall Frame Height"]}
+{"idx": 209, "keys": ["Opening Height"]}
+{"idx": 210, "keys": ["Opening Depth"]}
+{"idx": 211, "keys": ["Opening Width"]}
+{"idx": 212, "keys": ["Dimension B"]}
+{"idx": 213, "keys": ["Dimension L4"]}
+{"idx": 214, "keys": ["D2 Tapped"]}
+{"idx": 215, "keys": ["L2 Min"]}
+{"idx": 216, "keys": ["Bore"]}
+{"idx": 217, "keys": ["Packing Type"]}
+{"idx": 218, "keys": ["Crown Width"]}
+{"idx": 219, "keys": ["Leg Length"]}
+{"idx": 220, "keys": ["Machine Compatibility"]}
+{"idx": 221, "keys": ["Staple Type"]}
+{"idx": 222, "keys": ["Sheet Capacity"]}
+{"idx": 223, "keys": ["Peel-Apart Strength PIW"]}
+{"idx": 224, "keys": ["Shear Strength"]}
+{"idx": 225, "keys": ["PSI"]}
+{"idx": 226, "keys": ["CFM"]}
+{"idx": 227, "keys": ["Connection Configuration"]}
+{"idx": 228, "keys": ["Made in the USA"]}
+{"idx": 229, "keys": ["Max Operating PSI"]}
+{"idx": 230, "keys": ["Voltage"]}
+{"idx": 231, "keys": ["Base Height (L2)"]}
+{"idx": 232, "keys": ["Hex Flats (A/F)"]}
+{"idx": 233, "keys": ["Base Diameter (D1)"]}
+{"idx": 234, "keys": ["Pad Height (l3)"]}
+{"idx": 235, "keys": ["Thread Length (l1)"]}
+{"idx": 236, "keys": ["Plate Thickness"]}
+{"idx": 237, "keys": ["Mounting Hole Diameter"]}
+{"idx": 238, "keys": ["Spindle Thread"]}
+{"idx": 239, "keys": ["Ball Diameter"]}
+{"idx": 240, "keys": ["Handle Diameter"]}
+{"idx": 241, "keys": ["Cooking Surface"]}
+{"idx": 242, "keys": ["Fuel Type"]}
+{"idx": 243, "keys": ["Mounting Style"]}
+{"idx": 244, "keys": ["Base"]}
+{"idx": 245, "keys": ["CTC"]}
+{"idx": 246, "keys": ["Offset"]}
+{"idx": 247, "keys": ["Wheel Diameter"]}
+{"idx": 248, "keys": ["Wheel Type"]}
+{"idx": 249, "keys": ["Stackable"]}
+{"idx": 250, "keys": ["Casters"]}
+{"idx": 251, "keys": ["Capacity"]}
+{"idx": 252, "keys": ["Shape"]}
+{"idx": 253, "keys": ["Military Standard Equivalent"]}

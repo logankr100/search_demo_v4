@@ -1,0 +1,30 @@
+# Core data processing
+pandas>=1.3.0
+
+# Fuzzy string matching (preferred)
+rapidfuzz>=2.0.0
+
+# Machine learning for TF-IDF embeddings
+scikit-learn>=1.0.0
+
+# Numerical computing (required for OpenAI embeddings)
+numpy>=1.21.0
+
+# Optional: OpenAI embeddings for advanced clustering
+openai>=1.0.0
+
+# Standard library modules (included with Python)
+# - argparse
+# - csv
+# - json
+# - math
+# - re
+# - sys
+# - unicodedata
+# - collections
+# - dataclasses
+# - pathlib
+# - typing
+# - difflib (fallback for rapidfuzz)
+# - datetime
+# - os

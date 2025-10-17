@@ -1,0 +1,254 @@
+{"idx": 0, "keys": ["price_jsonld"], "total_count": 1421, "type_family": ["numeric", null, false]}
+{"idx": 1, "keys": ["currency_jsonld"], "total_count": 1421, "type_family": ["string", null, false]}
+{"idx": 2, "keys": ["sku"], "total_count": 1421, "type_family": ["numeric", null, false]}
+{"idx": 3, "keys": ["mpn"], "total_count": 1421, "type_family": ["numeric", null, false]}
+{"idx": 4, "keys": ["meta_description"], "total_count": 1421, "type_family": ["numeric", "thread", true]}
+{"idx": 5, "keys": ["og_description"], "total_count": 1421, "type_family": ["numeric", "thread", true]}
+{"idx": 6, "keys": ["Manufacturers Part Number"], "total_count": 1364, "type_family": ["numeric", null, false]}
+{"idx": 7, "keys": ["brand", "Brand"], "total_count": 2642, "type_family": ["string", null, false]}
+{"idx": 8, "keys": ["Material"], "total_count": 1093, "type_family": ["string", null, false]}
+{"idx": 9, "keys": ["Package Quantity"], "total_count": 1002, "type_family": ["numeric", null, false]}
+{"idx": 10, "keys": ["Description"], "total_count": 955, "type_family": ["string", null, false]}
+{"idx": 11, "keys": ["Country of Origin"], "total_count": 854, "type_family": ["string", null, false]}
+{"idx": 12, "keys": ["Length"], "total_count": 829, "type_family": ["numeric", "length", false]}
+{"idx": 13, "keys": ["Finish"], "total_count": 736, "type_family": ["string", null, false]}
+{"idx": 14, "keys": ["Size"], "total_count": 727, "type_family": ["numeric", null, false]}
+{"idx": 15, "keys": ["Unit of Measurement"], "total_count": 537, "type_family": ["string", "length", false]}
+{"idx": 16, "keys": ["Type"], "total_count": 521, "type_family": ["string", null, false]}
+{"idx": 17, "keys": ["Color"], "total_count": 460, "type_family": ["string", null, false]}
+{"idx": 18, "keys": ["Height"], "total_count": 413, "type_family": ["numeric", "length", false]}
+{"idx": 19, "keys": ["Width"], "total_count": 339, "type_family": ["numeric", "length", false]}
+{"idx": 20, "keys": ["Head"], "total_count": 290, "type_family": ["string", null, false]}
+{"idx": 21, "keys": ["Grade"], "total_count": 243, "type_family": ["string", "current", false]}
+{"idx": 22, "keys": ["Warranty"], "total_count": 217, "type_family": ["numeric", null, false]}
+{"idx": 23, "keys": ["Certifications"], "total_count": 174, "type_family": ["numeric", null, false]}
+{"idx": 24, "keys": ["Weight"], "total_count": 168, "type_family": ["numeric", "mass", false]}
+{"idx": 25, "keys": ["Diameter"], "total_count": 161, "type_family": ["numeric", "length", false]}
+{"idx": 26, "keys": ["Thread"], "total_count": 130, "type_family": ["string", "length", false]}
+{"idx": 27, "keys": ["Gauge"], "total_count": 126, "type_family": ["numeric", null, false]}
+{"idx": 28, "keys": ["Style"], "total_count": 120, "type_family": ["string", null, false]}
+{"idx": 29, "keys": ["Weight Capacity"], "total_count": 118, "type_family": ["numeric", "mass", false]}
+{"idx": 30, "keys": ["Includes"], "total_count": 113, "type_family": ["numeric", null, false]}
+{"idx": 31, "keys": ["Thread Size"], "total_count": 93, "type_family": ["string", "length", false]}
+{"idx": 32, "keys": ["For Use With"], "total_count": 90, "type_family": ["numeric", null, false]}
+{"idx": 33, "keys": ["Series"], "total_count": 88, "type_family": ["numeric", null, false]}
+{"idx": 34, "keys": ["Full or Partial Thread"], "total_count": 87, "type_family": ["string", null, false]}
+{"idx": 35, "keys": ["Number of Pieces"], "total_count": 87, "type_family": ["numeric", null, false]}
+{"idx": 36, "keys": ["Depth"], "total_count": 86, "type_family": ["numeric", "length", false]}
+{"idx": 37, "keys": ["Thread Length"], "total_count": 86, "type_family": ["numeric", "length", false]}
+{"idx": 38, "keys": ["Load Capacity Range"], "total_count": 80, "type_family": ["numeric", "length", false]}
+{"idx": 39, "keys": ["Thickness"], "total_count": 80, "type_family": ["numeric", "length", false]}
+{"idx": 40, "keys": ["Drive"], "total_count": 79, "type_family": ["string", null, false]}
+{"idx": 41, "keys": ["Base Diameter"], "total_count": 60, "type_family": ["numeric", "length", false]}
+{"idx": 42, "keys": ["Design"], "total_count": 59, "type_family": ["string", null, false]}
+{"idx": 43, "keys": ["Threading Type"], "total_count": 58, "type_family": ["string", null, false]}
+{"idx": 44, "keys": ["Alloy"], "total_count": 57, "type_family": ["numeric", null, false]}
+{"idx": 45, "keys": ["Padlock Capacity"], "total_count": 57, "type_family": ["numeric", null, false]}
+{"idx": 46, "keys": ["Installed Length"], "total_count": 54, "type_family": ["numeric", null, false]}
+{"idx": 47, "keys": ["Crown"], "total_count": 52, "type_family": ["numeric", null, false]}
+{"idx": 48, "keys": ["Body Material"], "total_count": 51, "type_family": ["string", null, false]}
+{"idx": 49, "keys": ["Units"], "total_count": 50, "type_family": ["numeric", null, false]}
+{"idx": 50, "keys": ["Inner Diameter"], "total_count": 50, "type_family": ["numeric", null, false]}
+{"idx": 51, "keys": ["Fastener Collation"], "total_count": 47, "type_family": ["numeric", null, false]}
+{"idx": 52, "keys": ["Interior or Exterior Use"], "total_count": 46, "type_family": ["string", null, false]}
+{"idx": 53, "keys": ["Pin Diameter"], "total_count": 43, "type_family": ["numeric", "length", false]}
+{"idx": 54, "keys": ["Stud Length"], "total_count": 42, "type_family": ["numeric", "length", false]}
+{"idx": 55, "keys": ["Pin Length"], "total_count": 40, "type_family": ["numeric", "length", false]}
+{"idx": 56, "keys": ["Fire Rating"], "total_count": 38, "type_family": ["numeric", null, false]}
+{"idx": 57, "keys": ["A/F"], "total_count": 36, "type_family": ["numeric", "length", false]}
+{"idx": 58, "keys": ["Mounting Distance"], "total_count": 33, "type_family": ["numeric", "length", false]}
+{"idx": 59, "keys": ["Spring Rate"], "total_count": 32, "type_family": ["numeric", "length", false]}
+{"idx": 60, "keys": ["Max Travel"], "total_count": 32, "type_family": ["numeric", null, false]}
+{"idx": 61, "keys": ["Body Mount Material"], "total_count": 32, "type_family": ["string", null, false]}
+{"idx": 62, "keys": ["Durometer"], "total_count": 32, "type_family": ["numeric", null, false]}
+{"idx": 63, "keys": ["Cover Plate Material"], "total_count": 32, "type_family": ["string", "length", false]}
+{"idx": 64, "keys": ["Insert Material"], "total_count": 31, "type_family": ["string", "length", false]}
+{"idx": 65, "keys": ["Nose Material"], "total_count": 30, "type_family": ["string", null, false]}
+{"idx": 66, "keys": ["Fits Door Thickness"], "total_count": 29, "type_family": ["numeric", "length", true]}
+{"idx": 67, "keys": ["End Pressure Start"], "total_count": 29, "type_family": ["numeric", "mass", false]}
+{"idx": 68, "keys": ["End Pressure Full"], "total_count": 29, "type_family": ["numeric", "mass", false]}
+{"idx": 69, "keys": ["Vertical Lifting Load"], "total_count": 28, "type_family": ["numeric", "mass", false]}
+{"idx": 70, "keys": ["Mounting Location"], "total_count": 28, "type_family": ["string", null, false]}
+{"idx": 71, "keys": ["Package Includes"], "total_count": 26, "type_family": ["string", null, false]}
+{"idx": 72, "keys": ["Max Deflection"], "total_count": 26, "type_family": ["numeric", null, false]}
+{"idx": 73, "keys": ["Adhesive"], "total_count": 25, "type_family": ["string", null, false]}
+{"idx": 74, "keys": ["Set Screw Body Material"], "total_count": 25, "type_family": ["string", null, false]}
+{"idx": 75, "keys": ["Ball Material"], "total_count": 25, "type_family": ["string", null, false]}
+{"idx": 76, "keys": ["Knob Diameter"], "total_count": 23, "type_family": ["numeric", "length", false]}
+{"idx": 77, "keys": ["Mounting Dimensions"], "total_count": 22, "type_family": ["numeric", "length", false]}
+{"idx": 78, "keys": ["Cutting Point"], "total_count": 22, "type_family": ["string", null, false]}
+{"idx": 79, "keys": ["Bumper Width"], "total_count": 22, "type_family": ["numeric", "length", false]}
+{"idx": 80, "keys": ["Bumper Height"], "total_count": 22, "type_family": ["numeric", "length", false]}
+{"idx": 81, "keys": ["Backing Material"], "total_count": 22, "type_family": ["string", null, false]}
+{"idx": 82, "keys": ["Hardness"], "total_count": 22, "type_family": ["numeric", "length", false]}
+{"idx": 83, "keys": ["Door Handle Type"], "total_count": 20, "type_family": ["string", null, false]}
+{"idx": 84, "keys": ["Thread Type"], "total_count": 19, "type_family": ["string", null, false]}
+{"idx": 85, "keys": ["Body Finish"], "total_count": 18, "type_family": ["string", null, false]}
+{"idx": 86, "keys": ["Lock Out"], "total_count": 18, "type_family": ["string", null, false]}
+{"idx": 87, "keys": ["Lock Nut"], "total_count": 18, "type_family": ["string", null, false]}
+{"idx": 88, "keys": ["Ball Height"], "total_count": 18, "type_family": ["numeric", null, false]}
+{"idx": 89, "keys": ["Full Ball Diameter"], "total_count": 18, "type_family": ["numeric", null, false]}
+{"idx": 90, "keys": ["Similar To"], "total_count": 17, "type_family": ["numeric", null, false]}
+{"idx": 91, "keys": ["Top Screw/Rod Diameter"], "total_count": 17, "type_family": ["numeric", null, false]}
+{"idx": 92, "keys": ["Drill Size"], "total_count": 16, "type_family": ["numeric", "length", false]}
+{"idx": 93, "keys": ["Max Load"], "total_count": 16, "type_family": ["numeric", "mass", false]}
+{"idx": 94, "keys": ["Mount Height"], "total_count": 16, "type_family": ["numeric", "length", false]}
+{"idx": 95, "keys": ["Bolt Size"], "total_count": 16, "type_family": ["numeric", "length", false]}
+{"idx": 96, "keys": ["Deflection"], "total_count": 15, "type_family": ["numeric", "length", false]}
+{"idx": 97, "keys": ["Rated Load"], "total_count": 15, "type_family": ["numeric", null, false]}
+{"idx": 98, "keys": ["Handle Length"], "total_count": 14, "type_family": ["numeric", "length", false]}
+{"idx": 99, "keys": ["Handle Type"], "total_count": 14, "type_family": ["string", null, false]}
+{"idx": 100, "keys": ["Number of Screw Holes"], "total_count": 14, "type_family": ["numeric", null, false]}
+{"idx": 101, "keys": ["Dimension H1"], "total_count": 13, "type_family": ["numeric", "length", false]}
+{"idx": 102, "keys": ["Dimension D2"], "total_count": 13, "type_family": ["numeric", "length", false]}
+{"idx": 103, "keys": ["Handle Height"], "total_count": 13, "type_family": ["numeric", "length", false]}
+{"idx": 104, "keys": ["Dimension H2"], "total_count": 13, "type_family": ["numeric", "length", false]}
+{"idx": 105, "keys": ["Deflection at Solid Load"], "total_count": 13, "type_family": ["numeric", "length", false]}
+{"idx": 106, "keys": ["Drive Type"], "total_count": 12, "type_family": ["string", null, false]}
+{"idx": 107, "keys": ["Torque"], "total_count": 12, "type_family": ["numeric", null, false]}
+{"idx": 108, "keys": ["Thread (D1)"], "total_count": 12, "type_family": ["numeric", "mass", false]}
+{"idx": 109, "keys": ["Hex Key Size"], "total_count": 12, "type_family": ["numeric", null, false]}
+{"idx": 110, "keys": ["Keyway"], "total_count": 12, "type_family": ["string", null, false]}
+{"idx": 111, "keys": ["Pull Ring Diameter"], "total_count": 12, "type_family": ["numeric", null, false]}
+{"idx": 112, "keys": ["Max Hole Spacing"], "total_count": 12, "type_family": ["numeric", null, false]}
+{"idx": 113, "keys": ["Leveler Material"], "total_count": 11, "type_family": ["string", null, false]}
+{"idx": 114, "keys": ["Locking Element"], "total_count": 11, "type_family": ["string", null, false]}
+{"idx": 115, "keys": ["Start-End Pressure"], "total_count": 11, "type_family": ["numeric", "mass", false]}
+{"idx": 116, "keys": ["Final End Pressure"], "total_count": 11, "type_family": ["numeric", "mass", false]}
+{"idx": 117, "keys": ["Assembly Required"], "total_count": 9, "type_family": ["string", null, false]}
+{"idx": 118, "keys": ["Assembled Width"], "total_count": 9, "type_family": ["numeric", "length", false]}
+{"idx": 119, "keys": ["Exit Type"], "total_count": 9, "type_family": ["string", null, false]}
+{"idx": 120, "keys": ["Mount Hole Diameter"], "total_count": 9, "type_family": ["numeric", "length", false]}
+{"idx": 121, "keys": ["Tap Drill Size"], "total_count": 9, "type_family": ["numeric", null, false]}
+{"idx": 122, "keys": ["Max User Codes"], "total_count": 8, "type_family": ["numeric", null, false]}
+{"idx": 123, "keys": ["Strike"], "total_count": 8, "type_family": ["string", "length", false]}
+{"idx": 124, "keys": ["Body Diameter"], "total_count": 8, "type_family": ["numeric", "length", false]}
+{"idx": 125, "keys": ["Radius"], "total_count": 8, "type_family": ["numeric", "length", false]}
+{"idx": 126, "keys": ["Spindle Size"], "total_count": 8, "type_family": ["numeric", null, false]}
+{"idx": 127, "keys": ["Threads per Inch"], "total_count": 8, "type_family": ["numeric", null, false]}
+{"idx": 128, "keys": ["Thread (D2)"], "total_count": 7, "type_family": ["numeric", "length", false]}
+{"idx": 129, "keys": ["Bore Size"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 130, "keys": ["Swivel Angle"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 131, "keys": ["Flange Diameter"], "total_count": 7, "type_family": ["numeric", "length", false]}
+{"idx": 132, "keys": ["Combined Thickness"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 133, "keys": ["Female ID"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 134, "keys": ["Male ID"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 135, "keys": ["Flat Ball Diameter"], "total_count": 7, "type_family": ["numeric", null, false]}
+{"idx": 136, "keys": ["Max Door Width"], "total_count": 6, "type_family": ["numeric", "length", false]}
+{"idx": 137, "keys": ["Square Size"], "total_count": 6, "type_family": ["numeric", null, false]}
+{"idx": 138, "keys": ["Dimension L1"], "total_count": 6, "type_family": ["numeric", "length", false]}
+{"idx": 139, "keys": ["Dimension D1"], "total_count": 6, "type_family": ["numeric", "length", false]}
+{"idx": 140, "keys": ["Hooks Opening"], "total_count": 6, "type_family": ["numeric", null, false]}
+{"idx": 141, "keys": ["Wire Thickness"], "total_count": 6, "type_family": ["numeric", null, false]}
+{"idx": 142, "keys": ["RoHS Compliant"], "total_count": 6, "type_family": ["string", null, false]}
+{"idx": 143, "keys": ["Max Door Thickness"], "total_count": 6, "type_family": ["numeric", "length", false]}
+{"idx": 144, "keys": ["Resistance"], "total_count": 6, "type_family": ["string", null, false]}
+{"idx": 145, "keys": ["Base Height"], "total_count": 6, "type_family": ["numeric", "length", false]}
+{"idx": 146, "keys": ["Hole Center"], "total_count": 5, "type_family": ["numeric", "length", false]}
+{"idx": 147, "keys": ["Backset"], "total_count": 5, "type_family": ["numeric", "length", false]}
+{"idx": 148, "keys": ["Latch"], "total_count": 5, "type_family": ["string", null, false]}
+{"idx": 149, "keys": ["Number of Keys"], "total_count": 5, "type_family": ["numeric", null, false]}
+{"idx": 150, "keys": ["Dimension W"], "total_count": 5, "type_family": ["numeric", "length", false]}
+{"idx": 151, "keys": ["Hex Size"], "total_count": 5, "type_family": ["numeric", null, false]}
+{"idx": 152, "keys": ["Dimension L2"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 153, "keys": ["Dimension L3"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 154, "keys": ["Dimension D3"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 155, "keys": ["Projection"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 156, "keys": ["Nose Length"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 157, "keys": ["Hole Diameter"], "total_count": 4, "type_family": ["numeric", null, false]}
+{"idx": 158, "keys": ["Rating"], "total_count": 4, "type_family": ["string", null, false]}
+{"idx": 159, "keys": ["Tray Dimensions"], "total_count": 4, "type_family": ["numeric", "length", false]}
+{"idx": 160, "keys": ["Container Material"], "total_count": 4, "type_family": ["string", null, false]}
+{"idx": 161, "keys": ["Number of Items"], "total_count": 4, "type_family": ["numeric", null, false]}
+{"idx": 162, "keys": ["Helicoil Equivalent"], "total_count": 4, "type_family": ["numeric", null, false]}
+{"idx": 163, "keys": ["Recoil Equivalent"], "total_count": 4, "type_family": ["numeric", null, false]}
+{"idx": 164, "keys": ["Handle Material"], "total_count": 3, "type_family": ["string", null, false]}
+{"idx": 165, "keys": ["Int. Hex"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 166, "keys": ["D2 Thread"], "total_count": 3, "type_family": ["numeric", "thread", true]}
+{"idx": 167, "keys": ["Recyclable"], "total_count": 3, "type_family": ["string", null, false]}
+{"idx": 168, "keys": ["ANSI A156.16"], "total_count": 3, "type_family": ["numeric", null, false]}
+{"idx": 169, "keys": ["Feet of Head"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 170, "keys": ["Back Pressure"], "total_count": 3, "type_family": ["numeric", "pressure", false]}
+{"idx": 171, "keys": ["Door Thickness"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 172, "keys": ["Accessory Type"], "total_count": 3, "type_family": ["string", null, false]}
+{"idx": 173, "keys": ["Nut Size"], "total_count": 3, "type_family": ["numeric", null, false]}
+{"idx": 174, "keys": ["Plate Length"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 175, "keys": ["Plate Width"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 176, "keys": ["Body Length"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 177, "keys": ["Nose Diameter"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 178, "keys": ["Flange Thickness"], "total_count": 3, "type_family": ["numeric", "length", false]}
+{"idx": 179, "keys": ["Screw Type"], "total_count": 3, "type_family": ["string", null, false]}
+{"idx": 180, "keys": ["Dimension A"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 181, "keys": ["Dimension L"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 182, "keys": ["Dimension E"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 183, "keys": ["D Thread"], "total_count": 2, "type_family": ["numeric", "thread", true]}
+{"idx": 184, "keys": ["Dimension D4"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 185, "keys": ["Staple Length"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 186, "keys": ["Nominal Flow Diameter"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 187, "keys": ["Interchange"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 188, "keys": ["Bypass Diameter"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 189, "keys": ["Audit Trail"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 190, "keys": ["Battery Life"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 191, "keys": ["Temperature Resistance"], "total_count": 2, "type_family": ["numeric", "temperature", false]}
+{"idx": 192, "keys": ["Stud"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 193, "keys": ["Top Diameter"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 194, "keys": ["Hole Size"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 195, "keys": ["Knob Material"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 196, "keys": ["Across Flats"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 197, "keys": ["Sight Glass Material"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 198, "keys": ["Gasket Material"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 199, "keys": ["Clearance"], "total_count": 2, "type_family": ["numeric", "length", false]}
+{"idx": 200, "keys": ["Screw Size"], "total_count": 2, "type_family": ["numeric", "thread", true]}
+{"idx": 201, "keys": ["For Use with Make"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 202, "keys": ["Compatible Part/Model Number"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 203, "keys": ["Frame Color Family"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 204, "keys": ["Frame Material"], "total_count": 2, "type_family": ["string", null, false]}
+{"idx": 205, "keys": ["Mil Thickness"], "total_count": 2, "type_family": ["numeric", null, false]}
+{"idx": 206, "keys": ["Load @ Solid Weight"], "total_count": 2, "type_family": ["numeric", "mass", false]}
+{"idx": 207, "keys": ["Coarse or Fine Thread"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 208, "keys": ["Overall Frame Height"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 209, "keys": ["Opening Height"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 210, "keys": ["Opening Depth"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 211, "keys": ["Opening Width"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 212, "keys": ["Dimension B"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 213, "keys": ["Dimension L4"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 214, "keys": ["D2 Tapped"], "total_count": 1, "type_family": ["numeric", "thread", true]}
+{"idx": 215, "keys": ["L2 Min"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 216, "keys": ["Bore"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 217, "keys": ["Packing Type"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 218, "keys": ["Crown Width"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 219, "keys": ["Leg Length"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 220, "keys": ["Machine Compatibility"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 221, "keys": ["Staple Type"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 222, "keys": ["Sheet Capacity"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 223, "keys": ["Peel-Apart Strength PIW"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 224, "keys": ["Shear Strength"], "total_count": 1, "type_family": ["numeric", "pressure", false]}
+{"idx": 225, "keys": ["PSI"], "total_count": 1, "type_family": ["numeric", "pressure", false]}
+{"idx": 226, "keys": ["CFM"], "total_count": 1, "type_family": ["numeric", "flow", false]}
+{"idx": 227, "keys": ["Connection Configuration"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 228, "keys": ["Made in the USA"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 229, "keys": ["Max Operating PSI"], "total_count": 1, "type_family": ["numeric", "pressure", false]}
+{"idx": 230, "keys": ["Voltage"], "total_count": 1, "type_family": ["numeric", "voltage", false]}
+{"idx": 231, "keys": ["Base Height (L2)"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 232, "keys": ["Hex Flats (A/F)"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 233, "keys": ["Base Diameter (D1)"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 234, "keys": ["Pad Height (l3)"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 235, "keys": ["Thread Length (l1)"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 236, "keys": ["Plate Thickness"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 237, "keys": ["Mounting Hole Diameter"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 238, "keys": ["Spindle Thread"], "total_count": 1, "type_family": ["numeric", "thread", true]}
+{"idx": 239, "keys": ["Ball Diameter"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 240, "keys": ["Handle Diameter"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 241, "keys": ["Cooking Surface"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 242, "keys": ["Fuel Type"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 243, "keys": ["Mounting Style"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 244, "keys": ["Base"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 245, "keys": ["CTC"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 246, "keys": ["Offset"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 247, "keys": ["Wheel Diameter"], "total_count": 1, "type_family": ["numeric", "length", false]}
+{"idx": 248, "keys": ["Wheel Type"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 249, "keys": ["Stackable"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 250, "keys": ["Casters"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 251, "keys": ["Capacity"], "total_count": 1, "type_family": ["numeric", null, false]}
+{"idx": 252, "keys": ["Shape"], "total_count": 1, "type_family": ["string", null, false]}
+{"idx": 253, "keys": ["Military Standard Equivalent"], "total_count": 1, "type_family": ["numeric", null, false]}

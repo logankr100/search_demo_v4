@@ -1,0 +1,1279 @@
+{
+  "keys": [
+    {
+      "key": "price_jsonld",
+      "count": 1421,
+      "example": "5.80"
+    },
+    {
+      "key": "currency_jsonld",
+      "count": 1421,
+      "example": "USD"
+    },
+    {
+      "key": "sku",
+      "count": 1421,
+      "example": "B2100805"
+    },
+    {
+      "key": "mpn",
+      "count": 1421,
+      "example": "101277"
+    },
+    {
+      "key": "meta_description",
+      "count": 1421,
+      "example": "Socket Set Screw - 10-32 x 3/8&quot; - Cup Point - Steel Alloy - Thermal Black Oxide - UNF - 100 Pk. Usually ships in2 days. Buy it and Save at Globalindustrial.com"
+    },
+    {
+      "key": "og_description",
+      "count": 1421,
+      "example": "Socket Set Screw - 10-32 x 3/8&quot; - Cup Point - Steel Alloy - Thermal Black Oxide - UNF - 100 Pk. Usually ships in2 days. Buy it and Save at Globalindustrial.com"
+    },
+    {
+      "key": "Manufacturers Part Number",
+      "count": 1364,
+      "example": "101277"
+    },
+    {
+      "key": "brand",
+      "count": 1321,
+      "example": "Brighton-Best"
+    },
+    {
+      "key": "Brand",
+      "count": 1321,
+      "example": "Brighton-Best"
+    },
+    {
+      "key": "Material",
+      "count": 1093,
+      "example": "Alloy Steel"
+    },
+    {
+      "key": "Package Quantity",
+      "count": 1002,
+      "example": "100"
+    },
+    {
+      "key": "Description",
+      "count": 955,
+      "example": "Socket Set Screw"
+    },
+    {
+      "key": "Country of Origin",
+      "count": 854,
+      "example": "Import"
+    },
+    {
+      "key": "Length",
+      "count": 829,
+      "example": "3/8 In in"
+    },
+    {
+      "key": "Finish",
+      "count": 736,
+      "example": "Black Oxide"
+    },
+    {
+      "key": "Size",
+      "count": 727,
+      "example": "10/32"
+    },
+    {
+      "key": "Unit of Measurement",
+      "count": 537,
+      "example": "Inch (Imperial)"
+    },
+    {
+      "key": "Type",
+      "count": 521,
+      "example": "Cup Point"
+    },
+    {
+      "key": "Color",
+      "count": 460,
+      "example": "Silver"
+    },
+    {
+      "key": "Height",
+      "count": 413,
+      "example": "2.9 in"
+    },
+    {
+      "key": "Width",
+      "count": 339,
+      "example": "2.04 in"
+    },
+    {
+      "key": "Head",
+      "count": 290,
+      "example": "Hex"
+    },
+    {
+      "key": "Grade",
+      "count": 243,
+      "example": "Grade A"
+    },
+    {
+      "key": "Warranty",
+      "count": 217,
+      "example": "1 yr"
+    },
+    {
+      "key": "Certifications",
+      "count": 174,
+      "example": "DIN 7985A"
+    },
+    {
+      "key": "Weight",
+      "count": 168,
+      "example": "0.2 lbs"
+    },
+    {
+      "key": "Diameter",
+      "count": 161,
+      "example": ".7415 in"
+    },
+    {
+      "key": "Thread",
+      "count": 130,
+      "example": "Fine in"
+    },
+    {
+      "key": "Gauge",
+      "count": 126,
+      "example": "18 ga"
+    },
+    {
+      "key": "Style",
+      "count": 120,
+      "example": "Hook"
+    },
+    {
+      "key": "Weight Capacity",
+      "count": 118,
+      "example": "25 lbs"
+    },
+    {
+      "key": "Includes",
+      "count": 113,
+      "example": "1 pc. @36\", 2 pcs. @83\" and screws"
+    },
+    {
+      "key": "Thread Size",
+      "count": 93,
+      "example": "Silver in"
+    },
+    {
+      "key": "For Use With",
+      "count": 90,
+      "example": "24\" x 36\" & 30\" x 36\" Roof Hatches"
+    },
+    {
+      "key": "Series",
+      "count": 88,
+      "example": "GN471.1"
+    },
+    {
+      "key": "Full or Partial Thread",
+      "count": 87,
+      "example": "Partial"
+    },
+    {
+      "key": "Number of Pieces",
+      "count": 87,
+      "example": "13"
+    },
+    {
+      "key": "Depth",
+      "count": 86,
+      "example": "2 in"
+    },
+    {
+      "key": "Thread Length",
+      "count": 86,
+      "example": "5/8 in"
+    },
+    {
+      "key": "Load Capacity Range",
+      "count": 80,
+      "example": "0 - 100 Ft. Lbs. lb-ft"
+    },
+    {
+      "key": "Thickness",
+      "count": 80,
+      "example": "0.12 in"
+    },
+    {
+      "key": "Drive",
+      "count": 79,
+      "example": "Phillips"
+    },
+    {
+      "key": "Base Diameter",
+      "count": 60,
+      "example": "0.31 in"
+    },
+    {
+      "key": "Design",
+      "count": 59,
+      "example": "Slotted"
+    },
+    {
+      "key": "Threading Type",
+      "count": 58,
+      "example": "Coarse"
+    },
+    {
+      "key": "Alloy",
+      "count": 57,
+      "example": "360"
+    },
+    {
+      "key": "Padlock Capacity",
+      "count": 57,
+      "example": "1-1/4\", 2\", 2-1/2\""
+    },
+    {
+      "key": "Installed Length",
+      "count": 54,
+      "example": "0.375\""
+    },
+    {
+      "key": "Crown",
+      "count": 52,
+      "example": "1/4"
+    },
+    {
+      "key": "Body Material",
+      "count": 51,
+      "example": "Steel"
+    },
+    {
+      "key": "Units",
+      "count": 50,
+      "example": "1"
+    },
+    {
+      "key": "Inner Diameter",
+      "count": 50,
+      "example": ".348\""
+    },
+    {
+      "key": "Fastener Collation",
+      "count": 47,
+      "example": "0 Degree"
+    },
+    {
+      "key": "Interior or Exterior Use",
+      "count": 46,
+      "example": "Interior/Exterior"
+    },
+    {
+      "key": "Pin Diameter",
+      "count": 43,
+      "example": ".31 in"
+    },
+    {
+      "key": "Stud Length",
+      "count": 42,
+      "example": "0.24 in"
+    },
+    {
+      "key": "Pin Length",
+      "count": 40,
+      "example": ".38 in"
+    },
+    {
+      "key": "Fire Rating",
+      "count": 38,
+      "example": "UL 10C"
+    },
+    {
+      "key": "A/F",
+      "count": 36,
+      "example": "0.12 in"
+    },
+    {
+      "key": "Mounting Distance",
+      "count": 33,
+      "example": "3-15/16 in"
+    },
+    {
+      "key": "Spring Rate",
+      "count": 32,
+      "example": "35 Ft. Lbs./In."
+    },
+    {
+      "key": "Max Travel",
+      "count": 32,
+      "example": "2mm"
+    },
+    {
+      "key": "Body Mount Material",
+      "count": 32,
+      "example": "Natural rubber (NR), Vulcanized"
+    },
+    {
+      "key": "Durometer",
+      "count": 32,
+      "example": "55"
+    },
+    {
+      "key": "Cover Plate Material",
+      "count": 32,
+      "example": "Steel, Zinc Plated, Blue Passivated, Molded In"
+    },
+    {
+      "key": "Insert Material",
+      "count": 31,
+      "example": "Steel, Zinc Plated, Blue Passivated, Molded In"
+    },
+    {
+      "key": "Nose Material",
+      "count": 30,
+      "example": "Stainless Steel"
+    },
+    {
+      "key": "Fits Door Thickness",
+      "count": 29,
+      "example": "1-3/4 STD, 1-3/8 - 2-1/4 Optional in"
+    },
+    {
+      "key": "End Pressure Start",
+      "count": 29,
+      "example": "1.00 lbs"
+    },
+    {
+      "key": "End Pressure Full",
+      "count": 29,
+      "example": "4.00 lbs"
+    },
+    {
+      "key": "Vertical Lifting Load",
+      "count": 28,
+      "example": "221 lbs"
+    },
+    {
+      "key": "Mounting Location",
+      "count": 28,
+      "example": "Rubber Resin Adhesive"
+    },
+    {
+      "key": "Package Includes",
+      "count": 26,
+      "example": "Hardware Kit"
+    },
+    {
+      "key": "Max Deflection",
+      "count": 26,
+      "example": "1.15\""
+    },
+    {
+      "key": "Adhesive",
+      "count": 25,
+      "example": "No"
+    },
+    {
+      "key": "Set Screw Body Material",
+      "count": 25,
+      "example": "Stainless Steel"
+    },
+    {
+      "key": "Ball Material",
+      "count": 25,
+      "example": "Stainless Steel"
+    },
+    {
+      "key": "Knob Diameter",
+      "count": 23,
+      "example": ".750 in"
+    },
+    {
+      "key": "Mounting Dimensions",
+      "count": 22,
+      "example": "12 x 3/4 in"
+    },
+    {
+      "key": "Cutting Point",
+      "count": 22,
+      "example": "Chisel Point"
+    },
+    {
+      "key": "Bumper Width",
+      "count": 22,
+      "example": "0.500 in"
+    },
+    {
+      "key": "Bumper Height",
+      "count": 22,
+      "example": "0.140 in"
+    },
+    {
+      "key": "Backing Material",
+      "count": 22,
+      "example": "Polyurethane"
+    },
+    {
+      "key": "Hardness",
+      "count": 22,
+      "example": "72 Shore M"
+    },
+    {
+      "key": "Door Handle Type",
+      "count": 20,
+      "example": "Monroe"
+    },
+    {
+      "key": "Thread Type",
+      "count": 19,
+      "example": "Fine"
+    },
+    {
+      "key": "Body Finish",
+      "count": 18,
+      "example": "Black Oxide"
+    },
+    {
+      "key": "Lock Out",
+      "count": 18,
+      "example": "No"
+    },
+    {
+      "key": "Lock Nut",
+      "count": 18,
+      "example": "No"
+    },
+    {
+      "key": "Ball Height",
+      "count": 18,
+      "example": ".4mm"
+    },
+    {
+      "key": "Full Ball Diameter",
+      "count": 18,
+      "example": "2.5mm"
+    },
+    {
+      "key": "Similar To",
+      "count": 17,
+      "example": "Bostitch 16S2"
+    },
+    {
+      "key": "Top Screw/Rod Diameter",
+      "count": 17,
+      "example": "5/8\""
+    },
+    {
+      "key": "Drill Size",
+      "count": 16,
+      "example": "T-15 in"
+    },
+    {
+      "key": "Max Load",
+      "count": 16,
+      "example": "2800 lbf lbs"
+    },
+    {
+      "key": "Mount Height",
+      "count": 16,
+      "example": "2-3/4 in"
+    },
+    {
+      "key": "Bolt Size",
+      "count": 16,
+      "example": "3/8 in"
+    },
+    {
+      "key": "Deflection",
+      "count": 15,
+      "example": "3/4 in"
+    },
+    {
+      "key": "Rated Load",
+      "count": 15,
+      "example": "44 - 50"
+    },
+    {
+      "key": "Handle Length",
+      "count": 14,
+      "example": "5.2 in"
+    },
+    {
+      "key": "Handle Type",
+      "count": 14,
+      "example": "Non-Handed"
+    },
+    {
+      "key": "Number of Screw Holes",
+      "count": 14,
+      "example": "8"
+    },
+    {
+      "key": "Dimension H1",
+      "count": 13,
+      "example": "1.1 in"
+    },
+    {
+      "key": "Dimension D2",
+      "count": 13,
+      "example": "1.06 in"
+    },
+    {
+      "key": "Handle Height",
+      "count": 13,
+      "example": "2.66 in"
+    },
+    {
+      "key": "Dimension H2",
+      "count": 13,
+      "example": "0.67 in"
+    },
+    {
+      "key": "Deflection at Solid Load",
+      "count": 13,
+      "example": "3/4 in"
+    },
+    {
+      "key": "Drive Type",
+      "count": 12,
+      "example": "Allen"
+    },
+    {
+      "key": "Torque",
+      "count": 12,
+      "example": "26.98 lbf"
+    },
+    {
+      "key": "Thread (D1)",
+      "count": 12,
+      "example": "G 3/4"
+    },
+    {
+      "key": "Hex Key Size",
+      "count": 12,
+      "example": "1/2\""
+    },
+    {
+      "key": "Keyway",
+      "count": 12,
+      "example": "SFIC Core"
+    },
+    {
+      "key": "Pull Ring Diameter",
+      "count": 12,
+      "example": ".84\""
+    },
+    {
+      "key": "Max Hole Spacing",
+      "count": 12,
+      "example": "3\""
+    },
+    {
+      "key": "Leveler Material",
+      "count": 11,
+      "example": "Stainless Steel"
+    },
+    {
+      "key": "Locking Element",
+      "count": 11,
+      "example": "No"
+    },
+    {
+      "key": "Start-End Pressure",
+      "count": 11,
+      "example": "3.48 lbs"
+    },
+    {
+      "key": "Final End Pressure",
+      "count": 11,
+      "example": "6.29 lbs"
+    },
+    {
+      "key": "Assembly Required",
+      "count": 9,
+      "example": "No"
+    },
+    {
+      "key": "Assembled Width",
+      "count": 9,
+      "example": "1-7/8 in"
+    },
+    {
+      "key": "Exit Type",
+      "count": 9,
+      "example": "Gate"
+    },
+    {
+      "key": "Mount Hole Diameter",
+      "count": 9,
+      "example": "0.50 in"
+    },
+    {
+      "key": "Tap Drill Size",
+      "count": 9,
+      "example": "57/64\""
+    },
+    {
+      "key": "Max User Codes",
+      "count": 8,
+      "example": "1"
+    },
+    {
+      "key": "Strike",
+      "count": 8,
+      "example": "ANSI in"
+    },
+    {
+      "key": "Body Diameter",
+      "count": 8,
+      "example": "0.24 in"
+    },
+    {
+      "key": "Radius",
+      "count": 8,
+      "example": "5/8 in"
+    },
+    {
+      "key": "Spindle Size",
+      "count": 8,
+      "example": "5/16\""
+    },
+    {
+      "key": "Threads per Inch",
+      "count": 8,
+      "example": "12"
+    },
+    {
+      "key": "Thread (D2)",
+      "count": 7,
+      "example": "M 4"
+    },
+    {
+      "key": "Bore Size",
+      "count": 7,
+      "example": "12mm"
+    },
+    {
+      "key": "Swivel Angle",
+      "count": 7,
+      "example": "10°"
+    },
+    {
+      "key": "Flange Diameter",
+      "count": 7,
+      "example": "0.26 in"
+    },
+    {
+      "key": "Combined Thickness",
+      "count": 7,
+      "example": "3/4\""
+    },
+    {
+      "key": "Female ID",
+      "count": 7,
+      "example": "2-1/8\""
+    },
+    {
+      "key": "Male ID",
+      "count": 7,
+      "example": "2-1/16\""
+    },
+    {
+      "key": "Flat Ball Diameter",
+      "count": 7,
+      "example": "7.2mm"
+    },
+    {
+      "key": "Max Door Width",
+      "count": 6,
+      "example": "52 in"
+    },
+    {
+      "key": "Square Size",
+      "count": 6,
+      "example": "5/8\""
+    },
+    {
+      "key": "Dimension L1",
+      "count": 6,
+      "example": "2.95 in"
+    },
+    {
+      "key": "Dimension D1",
+      "count": 6,
+      "example": "25 in"
+    },
+    {
+      "key": "Hooks Opening",
+      "count": 6,
+      "example": "0.27\""
+    },
+    {
+      "key": "Wire Thickness",
+      "count": 6,
+      "example": "0.080\""
+    },
+    {
+      "key": "RoHS Compliant",
+      "count": 6,
+      "example": "Yes"
+    },
+    {
+      "key": "Max Door Thickness",
+      "count": 6,
+      "example": "Up To 5 Thick With Extension Kit in"
+    },
+    {
+      "key": "Resistance",
+      "count": 6,
+      "example": "Full Weather Proof"
+    },
+    {
+      "key": "Base Height",
+      "count": 6,
+      "example": "0.12 in"
+    },
+    {
+      "key": "Hole Center",
+      "count": 5,
+      "example": "6.46 in"
+    },
+    {
+      "key": "Backset",
+      "count": 5,
+      "example": "2-3/4 in"
+    },
+    {
+      "key": "Latch",
+      "count": 5,
+      "example": "UL"
+    },
+    {
+      "key": "Number of Keys",
+      "count": 5,
+      "example": "2"
+    },
+    {
+      "key": "Dimension W",
+      "count": 5,
+      "example": "0.16 in"
+    },
+    {
+      "key": "Hex Size",
+      "count": 5,
+      "example": "12.7mm"
+    },
+    {
+      "key": "Dimension L2",
+      "count": 4,
+      "example": "14 in"
+    },
+    {
+      "key": "Dimension L3",
+      "count": 4,
+      "example": "8 in"
+    },
+    {
+      "key": "Dimension D3",
+      "count": 4,
+      "example": "20 in"
+    },
+    {
+      "key": "Projection",
+      "count": 4,
+      "example": "3-1/8 in"
+    },
+    {
+      "key": "Nose Length",
+      "count": 4,
+      "example": "0.06 in"
+    },
+    {
+      "key": "Hole Diameter",
+      "count": 4,
+      "example": "1\""
+    },
+    {
+      "key": "Rating",
+      "count": 4,
+      "example": "UL listed"
+    },
+    {
+      "key": "Tray Dimensions",
+      "count": 4,
+      "example": "11 x 6-3/4 x 1-3/4 in"
+    },
+    {
+      "key": "Container Material",
+      "count": 4,
+      "example": "Polypropylene"
+    },
+    {
+      "key": "Number of Items",
+      "count": 4,
+      "example": "6"
+    },
+    {
+      "key": "Helicoil Equivalent",
+      "count": 4,
+      "example": "1084-24CN 24.0"
+    },
+    {
+      "key": "Recoil Equivalent",
+      "count": 4,
+      "example": "05242"
+    },
+    {
+      "key": "Handle Material",
+      "count": 3,
+      "example": "Zinc Die-Cast"
+    },
+    {
+      "key": "Int. Hex",
+      "count": 3,
+      "example": "0.2 in"
+    },
+    {
+      "key": "D2 Thread",
+      "count": 3,
+      "example": "M12 x 1.75"
+    },
+    {
+      "key": "Recyclable",
+      "count": 3,
+      "example": "No"
+    },
+    {
+      "key": "ANSI A156.16",
+      "count": 3,
+      "example": "LB2231"
+    },
+    {
+      "key": "Feet of Head",
+      "count": 3,
+      "example": "40 ft"
+    },
+    {
+      "key": "Back Pressure",
+      "count": 3,
+      "example": "17 psi"
+    },
+    {
+      "key": "Door Thickness",
+      "count": 3,
+      "example": "1-3/4 in"
+    },
+    {
+      "key": "Accessory Type",
+      "count": 3,
+      "example": "Door Controller"
+    },
+    {
+      "key": "Nut Size",
+      "count": 3,
+      "example": "0.94\""
+    },
+    {
+      "key": "Plate Length",
+      "count": 3,
+      "example": "1.57 in"
+    },
+    {
+      "key": "Plate Width",
+      "count": 3,
+      "example": "0.71 in"
+    },
+    {
+      "key": "Body Length",
+      "count": 3,
+      "example": "0.24 in"
+    },
+    {
+      "key": "Nose Diameter",
+      "count": 3,
+      "example": "0.2 in"
+    },
+    {
+      "key": "Flange Thickness",
+      "count": 3,
+      "example": "0.04 in"
+    },
+    {
+      "key": "Screw Type",
+      "count": 3,
+      "example": "Machine Screw"
+    },
+    {
+      "key": "Dimension A",
+      "count": 2,
+      "example": "1.1 in"
+    },
+    {
+      "key": "Dimension L",
+      "count": 2,
+      "example": "3.62 in"
+    },
+    {
+      "key": "Dimension E",
+      "count": 2,
+      "example": "0.51 in"
+    },
+    {
+      "key": "D Thread",
+      "count": 2,
+      "example": "M10 x 1.5"
+    },
+    {
+      "key": "Dimension D4",
+      "count": 2,
+      "example": "21 in"
+    },
+    {
+      "key": "Staple Length",
+      "count": 2,
+      "example": "1/2\""
+    },
+    {
+      "key": "Nominal Flow Diameter",
+      "count": 2,
+      "example": "1/4 in"
+    },
+    {
+      "key": "Interchange",
+      "count": 2,
+      "example": "Hi-Flow"
+    },
+    {
+      "key": "Bypass Diameter",
+      "count": 2,
+      "example": "3/4 in"
+    },
+    {
+      "key": "Audit Trail",
+      "count": 2,
+      "example": "No"
+    },
+    {
+      "key": "Battery Life",
+      "count": 2,
+      "example": "200,000 Cycles"
+    },
+    {
+      "key": "Temperature Resistance",
+      "count": 2,
+      "example": "Up to 392° F (200° C) °C"
+    },
+    {
+      "key": "Stud",
+      "count": 2,
+      "example": "Pivots Up To 6°"
+    },
+    {
+      "key": "Top Diameter",
+      "count": 2,
+      "example": "0.96 in"
+    },
+    {
+      "key": "Hole Size",
+      "count": 2,
+      "example": "0.17 in"
+    },
+    {
+      "key": "Knob Material",
+      "count": 2,
+      "example": "Technopolymer Plastic"
+    },
+    {
+      "key": "Across Flats",
+      "count": 2,
+      "example": "2.13\" (54mm)"
+    },
+    {
+      "key": "Sight Glass Material",
+      "count": 2,
+      "example": "Transparent High-Resistance Polyamide"
+    },
+    {
+      "key": "Gasket Material",
+      "count": 2,
+      "example": "Oil-Resistant NBR Synthetic Rubber"
+    },
+    {
+      "key": "Clearance",
+      "count": 2,
+      "example": "1-1/8 – 1-9/16 in"
+    },
+    {
+      "key": "Screw Size",
+      "count": 2,
+      "example": "fits 5/16\" or M8"
+    },
+    {
+      "key": "For Use with Make",
+      "count": 2,
+      "example": "Mitsubishi"
+    },
+    {
+      "key": "Compatible Part/Model Number",
+      "count": 2,
+      "example": "PW23"
+    },
+    {
+      "key": "Frame Color Family",
+      "count": 2,
+      "example": "Glacier White"
+    },
+    {
+      "key": "Frame Material",
+      "count": 2,
+      "example": "Resin/Fiberglass"
+    },
+    {
+      "key": "Mil Thickness",
+      "count": 2,
+      "example": "4 mil"
+    },
+    {
+      "key": "Load @ Solid Weight",
+      "count": 2,
+      "example": "100 lbs"
+    },
+    {
+      "key": "Coarse or Fine Thread",
+      "count": 1,
+      "example": "Coarse"
+    },
+    {
+      "key": "Overall Frame Height",
+      "count": 1,
+      "example": "9-1/2 in"
+    },
+    {
+      "key": "Opening Height",
+      "count": 1,
+      "example": "9-1/2 in"
+    },
+    {
+      "key": "Opening Depth",
+      "count": 1,
+      "example": "24-1/2 in"
+    },
+    {
+      "key": "Opening Width",
+      "count": 1,
+      "example": "9 in"
+    },
+    {
+      "key": "Dimension B",
+      "count": 1,
+      "example": "20 in"
+    },
+    {
+      "key": "Dimension L4",
+      "count": 1,
+      "example": "3.15 in"
+    },
+    {
+      "key": "D2 Tapped",
+      "count": 1,
+      "example": "M6 x 1.0"
+    },
+    {
+      "key": "L2 Min",
+      "count": 1,
+      "example": "2.28 in"
+    },
+    {
+      "key": "Bore",
+      "count": 1,
+      "example": "0.2 in"
+    },
+    {
+      "key": "Packing Type",
+      "count": 1,
+      "example": "Plastic Container"
+    },
+    {
+      "key": "Crown Width",
+      "count": 1,
+      "example": "5/16\""
+    },
+    {
+      "key": "Leg Length",
+      "count": 1,
+      "example": "1/4 in"
+    },
+    {
+      "key": "Machine Compatibility",
+      "count": 1,
+      "example": "Stanley-Bostitch P3-CHROME Plier Stapler"
+    },
+    {
+      "key": "Staple Type",
+      "count": 1,
+      "example": "Crown"
+    },
+    {
+      "key": "Sheet Capacity",
+      "count": 1,
+      "example": "20"
+    },
+    {
+      "key": "Peel-Apart Strength PIW",
+      "count": 1,
+      "example": "1"
+    },
+    {
+      "key": "Shear Strength",
+      "count": 1,
+      "example": "8 psi"
+    },
+    {
+      "key": "PSI",
+      "count": 1,
+      "example": "300 psi"
+    },
+    {
+      "key": "CFM",
+      "count": 1,
+      "example": "74 CFM"
+    },
+    {
+      "key": "Connection Configuration",
+      "count": 1,
+      "example": "3/8 FNPT"
+    },
+    {
+      "key": "Made in the USA",
+      "count": 1,
+      "example": "No"
+    },
+    {
+      "key": "Max Operating PSI",
+      "count": 1,
+      "example": "300 psi"
+    },
+    {
+      "key": "Voltage",
+      "count": 1,
+      "example": "12-24 VDC V"
+    },
+    {
+      "key": "Base Height (L2)",
+      "count": 1,
+      "example": "22.4mm"
+    },
+    {
+      "key": "Hex Flats (A/F)",
+      "count": 1,
+      "example": "0.63mm"
+    },
+    {
+      "key": "Base Diameter (D1)",
+      "count": 1,
+      "example": "31.8mm"
+    },
+    {
+      "key": "Pad Height (l3)",
+      "count": 1,
+      "example": "5.6mm"
+    },
+    {
+      "key": "Thread Length (l1)",
+      "count": 1,
+      "example": "50.8mm"
+    },
+    {
+      "key": "Plate Thickness",
+      "count": 1,
+      "example": "0.22 in"
+    },
+    {
+      "key": "Mounting Hole Diameter",
+      "count": 1,
+      "example": "0.21 in"
+    },
+    {
+      "key": "Spindle Thread",
+      "count": 1,
+      "example": "M6 x 1.0 in"
+    },
+    {
+      "key": "Ball Diameter",
+      "count": 1,
+      "example": ".14 in"
+    },
+    {
+      "key": "Handle Diameter",
+      "count": 1,
+      "example": "1.18 in"
+    },
+    {
+      "key": "Cooking Surface",
+      "count": 1,
+      "example": "275 in²"
+    },
+    {
+      "key": "Fuel Type",
+      "count": 1,
+      "example": "Propane Gas"
+    },
+    {
+      "key": "Mounting Style",
+      "count": 1,
+      "example": "Portable"
+    },
+    {
+      "key": "Base",
+      "count": 1,
+      "example": "1-1/2 x 2 in"
+    },
+    {
+      "key": "CTC",
+      "count": 1,
+      "example": "18 in"
+    },
+    {
+      "key": "Offset",
+      "count": 1,
+      "example": "1/8 in"
+    },
+    {
+      "key": "Wheel Diameter",
+      "count": 1,
+      "example": "1 in"
+    },
+    {
+      "key": "Wheel Type",
+      "count": 1,
+      "example": "Concave"
+    },
+    {
+      "key": "Stackable",
+      "count": 1,
+      "example": "No"
+    },
+    {
+      "key": "Casters",
+      "count": 1,
+      "example": "No"
+    },
+    {
+      "key": "Capacity",
+      "count": 1,
+      "example": "9.4 oz"
+    },
+    {
+      "key": "Shape",
+      "count": 1,
+      "example": "Square"
+    },
+    {
+      "key": "Military Standard Equivalent",
+      "count": 1,
+      "example": "MS122167"
+    }
+  ]
+}

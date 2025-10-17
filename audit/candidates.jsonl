@@ -1,0 +1,1 @@
+{"left_idx": 4, "right_idx": 5, "left_keys": ["meta_description"], "right_keys": ["og_description"], "left_count": 1421, "right_count": 1421, "lex_score": 0.8, "sem_score": 0.956, "left_meta": {"type": "numeric", "family": "thread", "thread": true, "reserved": null}, "right_meta": {"type": "numeric", "family": "thread", "thread": true, "reserved": null}, "decision": "candidate"}
