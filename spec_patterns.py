@@ -271,3 +271,38 @@ def family_from_units(units: List[str]) -> Optional[str]:
         else:
             return None
     return next(iter(families)) if len(families) == 1 else None
+
+
+# ---------------------- TOLERANCES ----------------------
+
+# Absolute or relative tolerance per field or family.
+# Values are interpreted as absolute deltas in canonical units
+# (inches, psi, pounds, etc.) unless they start with "rel:".
+
+TOLERANCES = {
+    # ---- family-level defaults ----
+    "length": 0.0625,        # 1/16 in
+    "pressure": 10.0,        # ±10 psi
+    "mass": 0.5,             # ±0.5 lb
+    "weight": 0.5,
+    "torque": 0.1,           # ±0.1 lb-ft
+    "flow": 0.2,             # ±0.2 gpm
+    "temperature": 2.0,      # ±2 °F
+    "thread": 0.001,         # very tight tolerance for pitch
+    "power": 5.0,            # ±5 W
+    "frequency": 1.0,        # ±1 Hz
+
+    # ---- field-level overrides (optional) ----
+    "wheel_diameter": 0.125,      # 1/8 in window
+    "thread_size": 0.002,         # fine pitch tolerance
+    "outside_diameter": 0.0625,
+    "inside_diameter": 0.0625,
+    "base_diameter": 0.0625,
+    "mount_hole_diameter": 0.03125,  # 1/32 in
+    "length_overall": 0.25,
+    "weight_capacity": 1.0,        # ±1 lb or unitless
+    "load_capacity_range": "rel:0.05",  # ±5% relative
+
+    # fallback
+    "default": 0.25,  # absolute fallback in canonical units
+}
