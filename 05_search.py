@@ -54,6 +54,43 @@ try:
 except Exception:
     HAVE_FAISS = False
 
+# --- classification helpers ---
+
+UNICODE_FRAC = {"½":"1/2","¼":"1/4","¾":"3/4","⅛":"1/8","⅜":"3/8","⅝":"5/8","⅞":"7/8"}
+
+def _to_ascii_fracs(text: str) -> str:
+    if not isinstance(text, str):
+        return ""
+    t = unicodedata.normalize("NFKD", text)
+    for u, r in UNICODE_FRAC.items():
+        t = t.replace(u, r)
+    return t
+
+# number or mixed fraction:  12 | 12.5 | 1/2 | 1-1/2
+NUM_OR_FRAC = r"(?:\d+(?:\.\d+)?|\d+/\d+|\d+\s*-\s*\d+/\d+)"
+IN_PAT = r'(?:in|inch|inches|")'
+MM_PAT = r'(?:mm|millimeter(?:s)?)'
+FT_PAT = r"(?:ft|foot|feet|')"
+UNIT_PAT = rf"(?:{IN_PAT}|{MM_PAT}|{FT_PAT})"
+
+# Greedy scalar patterns on either side of alias
+RE_RIGHT = re.compile(rf'^\s*(?:=|:)?\s*({NUM_OR_FRAC})\s*({UNIT_PAT})?\b', re.I)
+RE_LEFT  = re.compile(rf'({NUM_OR_FRAC})\s*({UNIT_PAT})?\s*$', re.I)
+
+def _parse_number(s: str) -> Optional[float]:
+    s = s.strip()
+    try:
+        if "-" in s and "/" in s:
+            a, b = s.split("-", 1)
+            num, den = b.split("/", 1)
+            return float(int(a) + int(num) / int(den))
+        if "/" in s:
+            num, den = s.split("/", 1)
+            return float(int(num) / int(den))
+        return float(s)
+    except Exception:
+        return None
+
 # --------- spec parsing / τ tolerances (from your local module) ----------
 try:
     # classify_value_relaxed is optional; we fallback to strict if absent
@@ -258,23 +295,50 @@ def find_alias_hits(query: str, patterns: List[Tuple[re.Pattern, str, str]]) -> 
 
 def classify_nearby_scalar(query: str, span: Tuple[int,int], family_hint: Optional[str]) -> Optional[Tuple[float, Optional[str]]]:
     """
-    Look around alias span (±24 chars) for a scalar value; return normalized (value, unit)
-    Unit here is the raw unit token from classifier; conversion to canonical happens after.
+    Try to find a scalar value near the alias.
+    Order of attempts:
+      1) classifer (relaxed if present, else strict) on a wide window
+      2) fallback regex to the RIGHT of alias
+      3) fallback regex to the LEFT of alias
+    Returns (value, unit_raw_or_None).
     """
     L, R = span
-    w = 24
-    window = query[max(0, L - w): min(len(query), R + w)]
-    # prefer relaxed if available, else strict
-    if HAVE_RELAXED:
-        cl = classify_value_relaxed(window)
-    else:
-        cl = classify_value_strict(window)
-    if not cl or cl.get("kind") != "scalar":
-        return None
-    val = cl.get("value")
-    unit = cl.get("unit")
-    # We don't enforce family here yet; conversion step will validate
-    return (float(val), (unit if unit else None))
+    # Normalize query (ASCII + fraction folding) to help both classifier & regexes
+    q_norm = _to_ascii_fracs(query)
+    # Wider, forgiving window
+    W = 48
+    left  = q_norm[max(0, L - W): L]
+    right = q_norm[R: min(len(q_norm), R + W)]
+    around = q_norm[max(0, L - W): min(len(q_norm), R + W)]
+
+    # 1) Classifier on the around-window
+    try:
+        cl = classify_value_relaxed(around) if HAVE_RELAXED else classify_value_strict(around)
+    except Exception:
+        cl = None
+    if cl and cl.get("kind") == "scalar":
+        val = cl.get("value")
+        unit = cl.get("unit")
+        if val is not None:
+            return float(val), (unit if unit else None)
+
+    # 2) Regex to the RIGHT: alias followed by "= 2 in" or "2 in"
+    m = RE_RIGHT.search(right)
+    if m:
+        num_s, unit_s = m.group(1), m.group(2)
+        val = _parse_number(num_s)
+        if val is not None:
+            return val, (unit_s.lower() if unit_s else None)
+
+    # 3) Regex to the LEFT: "... 2 in" directly before alias
+    m = RE_LEFT.search(left)
+    if m:
+        num_s, unit_s = m.group(1), m.group(2)
+        val = _parse_number(num_s)
+        if val is not None:
+            return val, (unit_s.lower() if unit_s else None)
+
+    return None
 
 # -------------------- FAISS / brute helpers --------------------
 
@@ -416,6 +480,17 @@ def main():
             "family": family,
             "value": float(vcanon)
         })
+
+    if args.debug and hits and not constraints:
+        print(f"[debug] alias windows (no scalar found):")
+        for (s, e, fid) in hits:
+            W = 48
+            qn = _to_ascii_fracs(full_query)
+            left  = qn[max(0, s - W): s]
+            mid   = qn[s:e]
+            right = qn[e: min(len(qn), e + W)]
+            print(f"  - {fid}: ...[{left}]<{mid}>[{right}]...")
+        
     t1 = tnow()
 
     if args.debug:
