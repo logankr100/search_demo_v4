@@ -1,9 +1,10 @@
 {
   "version": 1,
-  "generated_at": "2025-10-17T00:33:35.945044+00:00",
-  "source": {
-    "embeddings": "tfidf",
-    "llm": false
+  "generated_at": "2025-10-20T20:00:05.827202+00:00",
+  "policy": {
+    "numeric_requires_all_scalar": true,
+    "family_requires_unanimity": true,
+    "unitless_scalar_allowed": true
   },
   "fields": [
     {
@@ -27,39 +28,9 @@
       ]
     },
     {
-      "id": "price_jsonld",
-      "label": "Price Jsonld",
-      "type": "numeric",
-      "unit_family": null,
-      "count": 1421,
-      "example": "5.80",
-      "aliases": [
-        {
-          "text": "price_jsonld",
-          "count": 1421,
-          "confidence": 1.0
-        }
-      ]
-    },
-    {
-      "id": "currency_jsonld",
-      "label": "Currency Jsonld",
-      "type": "string",
-      "unit_family": null,
-      "count": 1421,
-      "example": "USD",
-      "aliases": [
-        {
-          "text": "currency_jsonld",
-          "count": 1421,
-          "confidence": 1.0
-        }
-      ]
-    },
-    {
       "id": "sku",
       "label": "Sku",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1421,
       "example": "B2100805",
@@ -74,7 +45,7 @@
     {
       "id": "mpn",
       "label": "Mpn",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1421,
       "example": "101277",
@@ -87,39 +58,9 @@
       ]
     },
     {
-      "id": "meta_description",
-      "label": "Meta Description",
-      "type": "numeric",
-      "unit_family": "thread",
-      "count": 1421,
-      "example": "Socket Set Screw - 10-32 x 3/8&quot; - Cup Point - Steel Alloy - Thermal Black Oxide - UNF - 100 Pk. Usually ships in2 days. Buy it and Save at Globalindustrial.com",
-      "aliases": [
-        {
-          "text": "meta_description",
-          "count": 1421,
-          "confidence": 1.0
-        }
-      ]
-    },
-    {
-      "id": "og_description",
-      "label": "Og Description",
-      "type": "numeric",
-      "unit_family": "thread",
-      "count": 1421,
-      "example": "Socket Set Screw - 10-32 x 3/8&quot; - Cup Point - Steel Alloy - Thermal Black Oxide - UNF - 100 Pk. Usually ships in2 days. Buy it and Save at Globalindustrial.com",
-      "aliases": [
-        {
-          "text": "og_description",
-          "count": 1421,
-          "confidence": 1.0
-        }
-      ]
-    },
-    {
       "id": "manufacturers_part_number",
       "label": "Manufacturers Part Number",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1364,
       "example": "101277",
@@ -149,7 +90,7 @@
     {
       "id": "package_quantity",
       "label": "Package Quantity",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1002,
       "example": "100",
@@ -240,7 +181,7 @@
       "id": "unit_of_measurement",
       "label": "Unit Of Measurement",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 537,
       "example": "Inch (Imperial)",
       "aliases": [
@@ -330,7 +271,7 @@
       "id": "grade",
       "label": "Grade",
       "type": "string",
-      "unit_family": "current",
+      "unit_family": null,
       "count": 243,
       "example": "Grade A",
       "aliases": [
@@ -344,7 +285,7 @@
     {
       "id": "warranty",
       "label": "Warranty",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 217,
       "example": "1 yr",
@@ -359,7 +300,7 @@
     {
       "id": "certifications",
       "label": "Certifications",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 174,
       "example": "DIN 7985A",
@@ -389,8 +330,8 @@
     {
       "id": "diameter",
       "label": "Diameter",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 161,
       "example": ".7415 in",
       "aliases": [
@@ -405,7 +346,7 @@
       "id": "thread",
       "label": "Thread",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 130,
       "example": "Fine in",
       "aliases": [
@@ -419,7 +360,7 @@
     {
       "id": "gauge",
       "label": "Gauge",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 126,
       "example": "18 ga",
@@ -464,7 +405,7 @@
     {
       "id": "includes",
       "label": "Includes",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 113,
       "example": "1 pc. @36\", 2 pcs. @83\" and screws",
@@ -480,7 +421,7 @@
       "id": "thread_size",
       "label": "Thread Size",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 93,
       "example": "Silver in",
       "aliases": [
@@ -494,7 +435,7 @@
     {
       "id": "for_use_with",
       "label": "For Use With",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 90,
       "example": "24\" x 36\" & 30\" x 36\" Roof Hatches",
@@ -509,7 +450,7 @@
     {
       "id": "series",
       "label": "Series",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 88,
       "example": "GN471.1",
@@ -584,8 +525,8 @@
     {
       "id": "load_capacity_range",
       "label": "Load Capacity Range",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 80,
       "example": "0 - 100 Ft. Lbs. lb-ft",
       "aliases": [
@@ -689,7 +630,7 @@
     {
       "id": "padlock_capacity",
       "label": "Padlock Capacity",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 57,
       "example": "1-1/4\", 2\", 2-1/2\"",
@@ -705,7 +646,7 @@
       "id": "installed_length",
       "label": "Installed Length",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 54,
       "example": "0.375\"",
       "aliases": [
@@ -764,7 +705,7 @@
     {
       "id": "inner_diameter",
       "label": "Inner Diameter",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 50,
       "example": ".348\"",
@@ -779,7 +720,7 @@
     {
       "id": "fastener_collation",
       "label": "Fastener Collation",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 47,
       "example": "0 Degree",
@@ -809,8 +750,8 @@
     {
       "id": "pin_diameter",
       "label": "Pin Diameter",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 43,
       "example": ".31 in",
       "aliases": [
@@ -839,8 +780,8 @@
     {
       "id": "pin_length",
       "label": "Pin Length",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 40,
       "example": ".38 in",
       "aliases": [
@@ -854,7 +795,7 @@
     {
       "id": "fire_rating",
       "label": "Fire Rating",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 38,
       "example": "UL 10C",
@@ -884,8 +825,8 @@
     {
       "id": "mounting_distance",
       "label": "Mounting Distance",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 33,
       "example": "3-15/16 in",
       "aliases": [
@@ -899,8 +840,8 @@
     {
       "id": "spring_rate",
       "label": "Spring Rate",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 32,
       "example": "35 Ft. Lbs./In.",
       "aliases": [
@@ -915,7 +856,7 @@
       "id": "max_travel",
       "label": "Max Travel",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 32,
       "example": "2mm",
       "aliases": [
@@ -960,7 +901,7 @@
       "id": "cover_plate_material",
       "label": "Cover Plate Material",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 32,
       "example": "Steel, Zinc Plated, Blue Passivated, Molded In",
       "aliases": [
@@ -975,7 +916,7 @@
       "id": "insert_material",
       "label": "Insert Material",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 31,
       "example": "Steel, Zinc Plated, Blue Passivated, Molded In",
       "aliases": [
@@ -1004,8 +945,8 @@
     {
       "id": "fits_door_thickness",
       "label": "Fits Door Thickness",
-      "type": "numeric",
-      "unit_family": "thread",
+      "type": "string",
+      "unit_family": null,
       "count": 29,
       "example": "1-3/4 STD, 1-3/8 - 2-1/4 Optional in",
       "aliases": [
@@ -1095,7 +1036,7 @@
       "id": "max_deflection",
       "label": "Max Deflection",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 26,
       "example": "1.15\"",
       "aliases": [
@@ -1154,8 +1095,8 @@
     {
       "id": "knob_diameter",
       "label": "Knob Diameter",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 23,
       "example": ".750 in",
       "aliases": [
@@ -1169,8 +1110,8 @@
     {
       "id": "mounting_dimensions",
       "label": "Mounting Dimensions",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 22,
       "example": "12 x 3/4 in",
       "aliases": [
@@ -1244,8 +1185,8 @@
     {
       "id": "hardness",
       "label": "Hardness",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 22,
       "example": "72 Shore M",
       "aliases": [
@@ -1334,7 +1275,7 @@
     {
       "id": "ball_height",
       "label": "Ball Height",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 18,
       "example": ".4mm",
@@ -1350,7 +1291,7 @@
       "id": "full_ball_diameter",
       "label": "Full Ball Diameter",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 18,
       "example": "2.5mm",
       "aliases": [
@@ -1364,7 +1305,7 @@
     {
       "id": "similar_to",
       "label": "Similar To",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 17,
       "example": "Bostitch 16S2",
@@ -1380,7 +1321,7 @@
       "id": "top_screw_rod_diameter",
       "label": "Top Screw Rod Diameter",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 17,
       "example": "5/8\"",
       "aliases": [
@@ -1394,8 +1335,8 @@
     {
       "id": "drill_size",
       "label": "Drill Size",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 16,
       "example": "T-15 in",
       "aliases": [
@@ -1409,8 +1350,8 @@
     {
       "id": "max_load",
       "label": "Max Load",
-      "type": "numeric",
-      "unit_family": "mass",
+      "type": "string",
+      "unit_family": null,
       "count": 16,
       "example": "2800 lbf lbs",
       "aliases": [
@@ -1424,8 +1365,8 @@
     {
       "id": "mount_height",
       "label": "Mount Height",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 16,
       "example": "2-3/4 in",
       "aliases": [
@@ -1469,7 +1410,7 @@
     {
       "id": "rated_load",
       "label": "Rated Load",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 15,
       "example": "44 - 50",
@@ -1619,7 +1560,7 @@
     {
       "id": "torque",
       "label": "Torque",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 12,
       "example": "26.98 lbf",
@@ -1634,8 +1575,8 @@
     {
       "id": "thread_d1",
       "label": "Thread D1",
-      "type": "numeric",
-      "unit_family": "mass",
+      "type": "string",
+      "unit_family": null,
       "count": 12,
       "example": "G 3/4",
       "aliases": [
@@ -1650,7 +1591,7 @@
       "id": "hex_key_size",
       "label": "Hex Key Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 12,
       "example": "1/2\"",
       "aliases": [
@@ -1679,7 +1620,7 @@
     {
       "id": "pull_ring_diameter",
       "label": "Pull Ring Diameter",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 12,
       "example": ".84\"",
@@ -1695,7 +1636,7 @@
       "id": "max_hole_spacing",
       "label": "Max Hole Spacing",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 12,
       "example": "3\"",
       "aliases": [
@@ -1784,8 +1725,8 @@
     {
       "id": "assembled_width",
       "label": "Assembled Width",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 9,
       "example": "1-7/8 in",
       "aliases": [
@@ -1830,7 +1771,7 @@
       "id": "tap_drill_size",
       "label": "Tap Drill Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 9,
       "example": "57/64\"",
       "aliases": [
@@ -1860,7 +1801,7 @@
       "id": "strike",
       "label": "Strike",
       "type": "string",
-      "unit_family": "length",
+      "unit_family": null,
       "count": 8,
       "example": "ANSI in",
       "aliases": [
@@ -1905,7 +1846,7 @@
       "id": "spindle_size",
       "label": "Spindle Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 8,
       "example": "5/16\"",
       "aliases": [
@@ -1934,8 +1875,8 @@
     {
       "id": "thread_d2",
       "label": "Thread D2",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 7,
       "example": "M 4",
       "aliases": [
@@ -1950,7 +1891,7 @@
       "id": "bore_size",
       "label": "Bore Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 7,
       "example": "12mm",
       "aliases": [
@@ -1964,7 +1905,7 @@
     {
       "id": "swivel_angle",
       "label": "Swivel Angle",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 7,
       "example": "10°",
@@ -1995,7 +1936,7 @@
       "id": "combined_thickness",
       "label": "Combined Thickness",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 7,
       "example": "3/4\"",
       "aliases": [
@@ -2009,7 +1950,7 @@
     {
       "id": "female_id",
       "label": "Female Id",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 7,
       "example": "2-1/8\"",
@@ -2024,7 +1965,7 @@
     {
       "id": "male_id",
       "label": "Male Id",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 7,
       "example": "2-1/16\"",
@@ -2040,7 +1981,7 @@
       "id": "flat_ball_diameter",
       "label": "Flat Ball Diameter",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 7,
       "example": "7.2mm",
       "aliases": [
@@ -2070,7 +2011,7 @@
       "id": "square_size",
       "label": "Square Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 6,
       "example": "5/8\"",
       "aliases": [
@@ -2115,7 +2056,7 @@
       "id": "hooks_opening",
       "label": "Hooks Opening",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 6,
       "example": "0.27\"",
       "aliases": [
@@ -2130,7 +2071,7 @@
       "id": "wire_thickness",
       "label": "Wire Thickness",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 6,
       "example": "0.080\"",
       "aliases": [
@@ -2159,8 +2100,8 @@
     {
       "id": "max_door_thickness",
       "label": "Max Door Thickness",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 6,
       "example": "Up To 5 Thick With Extension Kit in",
       "aliases": [
@@ -2219,8 +2160,8 @@
     {
       "id": "backset",
       "label": "Backset",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 5,
       "example": "2-3/4 in",
       "aliases": [
@@ -2280,7 +2221,7 @@
       "id": "hex_size",
       "label": "Hex Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 5,
       "example": "12.7mm",
       "aliases": [
@@ -2339,8 +2280,8 @@
     {
       "id": "projection",
       "label": "Projection",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 4,
       "example": "3-1/8 in",
       "aliases": [
@@ -2370,7 +2311,7 @@
       "id": "hole_diameter",
       "label": "Hole Diameter",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 4,
       "example": "1\"",
       "aliases": [
@@ -2399,8 +2340,8 @@
     {
       "id": "tray_dimensions",
       "label": "Tray Dimensions",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 4,
       "example": "11 x 6-3/4 x 1-3/4 in",
       "aliases": [
@@ -2444,7 +2385,7 @@
     {
       "id": "helicoil_equivalent",
       "label": "Helicoil Equivalent",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 4,
       "example": "1084-24CN 24.0",
@@ -2504,7 +2445,7 @@
     {
       "id": "d2_thread",
       "label": "D2 Thread",
-      "type": "numeric",
+      "type": "string",
       "unit_family": "thread",
       "count": 3,
       "example": "M12 x 1.75",
@@ -2534,7 +2475,7 @@
     {
       "id": "ansi_a156_16",
       "label": "Ansi A156 16",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 3,
       "example": "LB2231",
@@ -2579,8 +2520,8 @@
     {
       "id": "door_thickness",
       "label": "Door Thickness",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 3,
       "example": "1-3/4 in",
       "aliases": [
@@ -2610,7 +2551,7 @@
       "id": "nut_size",
       "label": "Nut Size",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 3,
       "example": "0.94\"",
       "aliases": [
@@ -2759,7 +2700,7 @@
     {
       "id": "d_thread",
       "label": "D Thread",
-      "type": "numeric",
+      "type": "string",
       "unit_family": "thread",
       "count": 2,
       "example": "M10 x 1.5",
@@ -2790,7 +2731,7 @@
       "id": "staple_length",
       "label": "Staple Length",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 2,
       "example": "1/2\"",
       "aliases": [
@@ -2864,7 +2805,7 @@
     {
       "id": "battery_life",
       "label": "Battery Life",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 2,
       "example": "200,000 Cycles",
@@ -2879,8 +2820,8 @@
     {
       "id": "temperature_resistance",
       "label": "Temperature Resistance",
-      "type": "numeric",
-      "unit_family": "temperature",
+      "type": "string",
+      "unit_family": null,
       "count": 2,
       "example": "Up to 392° F (200° C) °C",
       "aliases": [
@@ -2894,7 +2835,7 @@
     {
       "id": "stud",
       "label": "Stud",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 2,
       "example": "Pivots Up To 6°",
@@ -2954,7 +2895,7 @@
     {
       "id": "across_flats",
       "label": "Across Flats",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 2,
       "example": "2.13\" (54mm)",
@@ -2999,8 +2940,8 @@
     {
       "id": "clearance",
       "label": "Clearance",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 2,
       "example": "1-1/8 – 1-9/16 in",
       "aliases": [
@@ -3014,8 +2955,8 @@
     {
       "id": "screw_size",
       "label": "Screw Size",
-      "type": "numeric",
-      "unit_family": "thread",
+      "type": "string",
+      "unit_family": null,
       "count": 2,
       "example": "fits 5/16\" or M8",
       "aliases": [
@@ -3044,7 +2985,7 @@
     {
       "id": "compatible_part_model_number",
       "label": "Compatible Part Model Number",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 2,
       "example": "PW23",
@@ -3089,7 +3030,7 @@
     {
       "id": "mil_thickness",
       "label": "Mil Thickness",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 2,
       "example": "4 mil",
@@ -3134,8 +3075,8 @@
     {
       "id": "overall_frame_height",
       "label": "Overall Frame Height",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": "9-1/2 in",
       "aliases": [
@@ -3149,8 +3090,8 @@
     {
       "id": "opening_height",
       "label": "Opening Height",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": "9-1/2 in",
       "aliases": [
@@ -3164,8 +3105,8 @@
     {
       "id": "opening_depth",
       "label": "Opening Depth",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": "24-1/2 in",
       "aliases": [
@@ -3224,7 +3165,7 @@
     {
       "id": "d2_tapped",
       "label": "D2 Tapped",
-      "type": "numeric",
+      "type": "string",
       "unit_family": "thread",
       "count": 1,
       "example": "M6 x 1.0",
@@ -3285,7 +3226,7 @@
       "id": "crown_width",
       "label": "Crown Width",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "5/16\"",
       "aliases": [
@@ -3314,7 +3255,7 @@
     {
       "id": "machine_compatibility",
       "label": "Machine Compatibility",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1,
       "example": "Stanley-Bostitch P3-CHROME Plier Stapler",
@@ -3419,7 +3360,7 @@
     {
       "id": "connection_configuration",
       "label": "Connection Configuration",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1,
       "example": "3/8 FNPT",
@@ -3464,8 +3405,8 @@
     {
       "id": "voltage",
       "label": "Voltage",
-      "type": "numeric",
-      "unit_family": "voltage",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": "12-24 VDC V",
       "aliases": [
@@ -3480,7 +3421,7 @@
       "id": "base_height_l2",
       "label": "Base Height L2",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "22.4mm",
       "aliases": [
@@ -3495,7 +3436,7 @@
       "id": "hex_flats_a_f",
       "label": "Hex Flats A F",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "0.63mm",
       "aliases": [
@@ -3510,7 +3451,7 @@
       "id": "base_diameter_d1",
       "label": "Base Diameter D1",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "31.8mm",
       "aliases": [
@@ -3525,7 +3466,7 @@
       "id": "pad_height_l3",
       "label": "Pad Height L3",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "5.6mm",
       "aliases": [
@@ -3540,7 +3481,7 @@
       "id": "thread_length_l1",
       "label": "Thread Length L1",
       "type": "numeric",
-      "unit_family": null,
+      "unit_family": "length",
       "count": 1,
       "example": "50.8mm",
       "aliases": [
@@ -3584,7 +3525,7 @@
     {
       "id": "spindle_thread",
       "label": "Spindle Thread",
-      "type": "numeric",
+      "type": "string",
       "unit_family": "thread",
       "count": 1,
       "example": "M6 x 1.0 in",
@@ -3599,8 +3540,8 @@
     {
       "id": "ball_diameter",
       "label": "Ball Diameter",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": ".14 in",
       "aliases": [
@@ -3629,7 +3570,7 @@
     {
       "id": "cooking_surface",
       "label": "Cooking Surface",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1,
       "example": "275 in²",
@@ -3674,8 +3615,8 @@
     {
       "id": "base",
       "label": "Base",
-      "type": "numeric",
-      "unit_family": "length",
+      "type": "string",
+      "unit_family": null,
       "count": 1,
       "example": "1-1/2 x 2 in",
       "aliases": [
@@ -3779,7 +3720,7 @@
     {
       "id": "capacity",
       "label": "Capacity",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1,
       "example": "9.4 oz",
@@ -3809,7 +3750,7 @@
     {
       "id": "military_standard_equivalent",
       "label": "Military Standard Equivalent",
-      "type": "numeric",
+      "type": "string",
       "unit_family": null,
       "count": 1,
       "example": "MS122167",

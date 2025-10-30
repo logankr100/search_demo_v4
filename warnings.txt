@@ -1,0 +1,358 @@
+[low-support] id=country_of_origin n_samples=1
+[violations] id=country_of_origin range=0 dual=0 thread=0 unknown=1
+[low-support] id=length n_samples=1
+[low-support] id=size n_samples=1
+[low-support] id=unit_of_measurement n_samples=1
+[violations] id=unit_of_measurement range=0 dual=0 thread=0 unknown=1
+[low-support] id=height n_samples=1
+[low-support] id=width n_samples=1
+[low-support] id=head n_samples=1
+[violations] id=head range=0 dual=0 thread=0 unknown=1
+[low-support] id=grade n_samples=1
+[violations] id=grade range=0 dual=0 thread=0 unknown=1
+[low-support] id=certifications n_samples=1
+[violations] id=certifications range=0 dual=0 thread=0 unknown=1
+[low-support] id=weight n_samples=1
+[low-support] id=diameter n_samples=1
+[violations] id=diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=thread n_samples=1
+[violations] id=thread range=0 dual=0 thread=0 unknown=1
+[low-support] id=gauge n_samples=1
+[violations] id=gauge range=0 dual=0 thread=0 unknown=1
+[low-support] id=weight_capacity n_samples=1
+[low-support] id=includes n_samples=1
+[violations] id=includes range=0 dual=0 thread=0 unknown=1
+[low-support] id=thread_size n_samples=1
+[violations] id=thread_size range=0 dual=0 thread=0 unknown=1
+[low-support] id=for_use_with n_samples=1
+[violations] id=for_use_with range=0 dual=0 thread=0 unknown=1
+[low-support] id=full_or_partial_thread n_samples=1
+[violations] id=full_or_partial_thread range=0 dual=0 thread=0 unknown=1
+[low-support] id=number_of_pieces n_samples=1
+[low-support] id=depth n_samples=1
+[low-support] id=thread_length n_samples=1
+[low-support] id=load_capacity_range n_samples=1
+[violations] id=load_capacity_range range=1 dual=0 thread=0 unknown=0
+[low-support] id=thickness n_samples=1
+[low-support] id=drive n_samples=1
+[violations] id=drive range=0 dual=0 thread=0 unknown=1
+[low-support] id=base_diameter n_samples=1
+[low-support] id=design n_samples=1
+[violations] id=design range=0 dual=0 thread=0 unknown=1
+[low-support] id=threading_type n_samples=1
+[violations] id=threading_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=alloy n_samples=1
+[low-support] id=padlock_capacity n_samples=1
+[violations] id=padlock_capacity range=0 dual=0 thread=0 unknown=1
+[low-support] id=installed_length n_samples=1
+[low-support] id=crown n_samples=1
+[low-support] id=body_material n_samples=1
+[violations] id=body_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=units n_samples=1
+[low-support] id=inner_diameter n_samples=1
+[violations] id=inner_diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=fastener_collation n_samples=1
+[violations] id=fastener_collation range=0 dual=0 thread=0 unknown=1
+[low-support] id=interior_or_exterior_use n_samples=1
+[violations] id=interior_or_exterior_use range=0 dual=0 thread=0 unknown=1
+[low-support] id=pin_diameter n_samples=1
+[violations] id=pin_diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=stud_length n_samples=1
+[low-support] id=pin_length n_samples=1
+[violations] id=pin_length range=0 dual=0 thread=0 unknown=1
+[low-support] id=fire_rating n_samples=1
+[violations] id=fire_rating range=0 dual=0 thread=0 unknown=1
+[low-support] id=a_f n_samples=1
+[low-support] id=mounting_distance n_samples=1
+[violations] id=mounting_distance range=1 dual=0 thread=0 unknown=0
+[low-support] id=spring_rate n_samples=1
+[violations] id=spring_rate range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_travel n_samples=1
+[low-support] id=body_mount_material n_samples=1
+[violations] id=body_mount_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=durometer n_samples=1
+[low-support] id=cover_plate_material n_samples=1
+[violations] id=cover_plate_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=insert_material n_samples=1
+[violations] id=insert_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=nose_material n_samples=1
+[violations] id=nose_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=fits_door_thickness n_samples=1
+[violations] id=fits_door_thickness range=0 dual=0 thread=0 unknown=1
+[low-support] id=end_pressure_start n_samples=1
+[low-support] id=end_pressure_full n_samples=1
+[low-support] id=vertical_lifting_load n_samples=1
+[low-support] id=mounting_location n_samples=1
+[violations] id=mounting_location range=0 dual=0 thread=0 unknown=1
+[low-support] id=package_includes n_samples=1
+[violations] id=package_includes range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_deflection n_samples=1
+[low-support] id=adhesive n_samples=1
+[violations] id=adhesive range=0 dual=0 thread=0 unknown=1
+[low-support] id=set_screw_body_material n_samples=1
+[violations] id=set_screw_body_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=ball_material n_samples=1
+[violations] id=ball_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=knob_diameter n_samples=1
+[violations] id=knob_diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=mounting_dimensions n_samples=1
+[violations] id=mounting_dimensions range=0 dual=0 thread=0 unknown=1
+[low-support] id=cutting_point n_samples=1
+[violations] id=cutting_point range=0 dual=0 thread=0 unknown=1
+[low-support] id=bumper_width n_samples=1
+[low-support] id=bumper_height n_samples=1
+[low-support] id=backing_material n_samples=1
+[violations] id=backing_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=hardness n_samples=1
+[violations] id=hardness range=0 dual=0 thread=0 unknown=1
+[low-support] id=door_handle_type n_samples=1
+[violations] id=door_handle_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=thread_type n_samples=1
+[violations] id=thread_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=body_finish n_samples=1
+[violations] id=body_finish range=0 dual=0 thread=0 unknown=1
+[low-support] id=lock_out n_samples=1
+[violations] id=lock_out range=0 dual=0 thread=0 unknown=1
+[low-support] id=lock_nut n_samples=1
+[violations] id=lock_nut range=0 dual=0 thread=0 unknown=1
+[low-support] id=ball_height n_samples=1
+[violations] id=ball_height range=0 dual=0 thread=0 unknown=1
+[low-support] id=full_ball_diameter n_samples=1
+[low-support] id=similar_to n_samples=1
+[violations] id=similar_to range=0 dual=0 thread=0 unknown=1
+[low-support] id=top_screw_rod_diameter n_samples=1
+[low-support] id=drill_size n_samples=1
+[violations] id=drill_size range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_load n_samples=1
+[violations] id=max_load range=0 dual=0 thread=0 unknown=1
+[low-support] id=mount_height n_samples=1
+[violations] id=mount_height range=1 dual=0 thread=0 unknown=0
+[low-support] id=bolt_size n_samples=1
+[low-support] id=deflection n_samples=1
+[low-support] id=rated_load n_samples=1
+[violations] id=rated_load range=1 dual=0 thread=0 unknown=0
+[low-support] id=handle_length n_samples=1
+[low-support] id=handle_type n_samples=1
+[violations] id=handle_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=number_of_screw_holes n_samples=1
+[low-support] id=dimension_h1 n_samples=1
+[low-support] id=dimension_d2 n_samples=1
+[low-support] id=handle_height n_samples=1
+[low-support] id=dimension_h2 n_samples=1
+[low-support] id=deflection_at_solid_load n_samples=1
+[low-support] id=drive_type n_samples=1
+[violations] id=drive_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=torque n_samples=1
+[violations] id=torque range=0 dual=0 thread=0 unknown=1
+[low-support] id=thread_d1 n_samples=1
+[violations] id=thread_d1 range=0 dual=0 thread=0 unknown=1
+[low-support] id=hex_key_size n_samples=1
+[low-support] id=keyway n_samples=1
+[violations] id=keyway range=0 dual=0 thread=0 unknown=1
+[low-support] id=pull_ring_diameter n_samples=1
+[violations] id=pull_ring_diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_hole_spacing n_samples=1
+[low-support] id=leveler_material n_samples=1
+[violations] id=leveler_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=locking_element n_samples=1
+[violations] id=locking_element range=0 dual=0 thread=0 unknown=1
+[low-support] id=start_end_pressure n_samples=1
+[low-support] id=final_end_pressure n_samples=1
+[low-support] id=assembly_required n_samples=1
+[violations] id=assembly_required range=0 dual=0 thread=0 unknown=1
+[low-support] id=assembled_width n_samples=1
+[violations] id=assembled_width range=1 dual=0 thread=0 unknown=0
+[low-support] id=exit_type n_samples=1
+[violations] id=exit_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=mount_hole_diameter n_samples=1
+[low-support] id=tap_drill_size n_samples=1
+[low-support] id=max_user_codes n_samples=1
+[low-support] id=strike n_samples=1
+[violations] id=strike range=0 dual=0 thread=0 unknown=1
+[low-support] id=body_diameter n_samples=1
+[low-support] id=radius n_samples=1
+[low-support] id=spindle_size n_samples=1
+[low-support] id=threads_per_inch n_samples=1
+[low-support] id=thread_d2 n_samples=1
+[violations] id=thread_d2 range=0 dual=0 thread=0 unknown=1
+[low-support] id=bore_size n_samples=1
+[low-support] id=swivel_angle n_samples=1
+[violations] id=swivel_angle range=0 dual=0 thread=0 unknown=1
+[low-support] id=flange_diameter n_samples=1
+[low-support] id=combined_thickness n_samples=1
+[low-support] id=female_id n_samples=1
+[violations] id=female_id range=1 dual=0 thread=0 unknown=0
+[low-support] id=male_id n_samples=1
+[violations] id=male_id range=1 dual=0 thread=0 unknown=0
+[low-support] id=flat_ball_diameter n_samples=1
+[low-support] id=max_door_width n_samples=1
+[low-support] id=square_size n_samples=1
+[low-support] id=dimension_l1 n_samples=1
+[low-support] id=dimension_d1 n_samples=1
+[low-support] id=hooks_opening n_samples=1
+[low-support] id=wire_thickness n_samples=1
+[low-support] id=rohs_compliant n_samples=1
+[violations] id=rohs_compliant range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_door_thickness n_samples=1
+[violations] id=max_door_thickness range=0 dual=0 thread=0 unknown=1
+[low-support] id=resistance n_samples=1
+[violations] id=resistance range=0 dual=0 thread=0 unknown=1
+[low-support] id=base_height n_samples=1
+[low-support] id=hole_center n_samples=1
+[low-support] id=backset n_samples=1
+[violations] id=backset range=1 dual=0 thread=0 unknown=0
+[low-support] id=latch n_samples=1
+[violations] id=latch range=0 dual=0 thread=0 unknown=1
+[low-support] id=number_of_keys n_samples=1
+[low-support] id=dimension_w n_samples=1
+[low-support] id=hex_size n_samples=1
+[low-support] id=dimension_l2 n_samples=1
+[low-support] id=dimension_l3 n_samples=1
+[low-support] id=dimension_d3 n_samples=1
+[low-support] id=projection n_samples=1
+[violations] id=projection range=1 dual=0 thread=0 unknown=0
+[low-support] id=nose_length n_samples=1
+[low-support] id=hole_diameter n_samples=1
+[low-support] id=rating n_samples=1
+[violations] id=rating range=0 dual=0 thread=0 unknown=1
+[low-support] id=tray_dimensions n_samples=1
+[violations] id=tray_dimensions range=1 dual=0 thread=0 unknown=0
+[low-support] id=container_material n_samples=1
+[violations] id=container_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=number_of_items n_samples=1
+[low-support] id=helicoil_equivalent n_samples=1
+[violations] id=helicoil_equivalent range=0 dual=0 thread=0 unknown=1
+[low-support] id=recoil_equivalent n_samples=1
+[low-support] id=handle_material n_samples=1
+[violations] id=handle_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=int_hex n_samples=1
+[low-support] id=d2_thread n_samples=1
+[low-support] id=recyclable n_samples=1
+[violations] id=recyclable range=0 dual=0 thread=0 unknown=1
+[low-support] id=ansi_a156_16 n_samples=1
+[violations] id=ansi_a156_16 range=0 dual=0 thread=0 unknown=1
+[low-support] id=feet_of_head n_samples=1
+[low-support] id=back_pressure n_samples=1
+[low-support] id=door_thickness n_samples=1
+[violations] id=door_thickness range=1 dual=0 thread=0 unknown=0
+[low-support] id=accessory_type n_samples=1
+[violations] id=accessory_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=nut_size n_samples=1
+[low-support] id=plate_length n_samples=1
+[low-support] id=plate_width n_samples=1
+[low-support] id=body_length n_samples=1
+[low-support] id=nose_diameter n_samples=1
+[low-support] id=flange_thickness n_samples=1
+[low-support] id=screw_type n_samples=1
+[violations] id=screw_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=dimension_a n_samples=1
+[low-support] id=dimension_l n_samples=1
+[low-support] id=dimension_e n_samples=1
+[low-support] id=d_thread n_samples=1
+[low-support] id=dimension_d4 n_samples=1
+[low-support] id=staple_length n_samples=1
+[low-support] id=nominal_flow_diameter n_samples=1
+[low-support] id=interchange n_samples=1
+[violations] id=interchange range=0 dual=0 thread=0 unknown=1
+[low-support] id=bypass_diameter n_samples=1
+[low-support] id=audit_trail n_samples=1
+[violations] id=audit_trail range=0 dual=0 thread=0 unknown=1
+[low-support] id=battery_life n_samples=1
+[violations] id=battery_life range=0 dual=0 thread=0 unknown=1
+[low-support] id=temperature_resistance n_samples=1
+[violations] id=temperature_resistance range=0 dual=0 thread=0 unknown=1
+[low-support] id=stud n_samples=1
+[violations] id=stud range=0 dual=0 thread=0 unknown=1
+[low-support] id=top_diameter n_samples=1
+[low-support] id=hole_size n_samples=1
+[low-support] id=knob_material n_samples=1
+[violations] id=knob_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=across_flats n_samples=1
+[violations] id=across_flats range=0 dual=0 thread=0 unknown=1
+[low-support] id=sight_glass_material n_samples=1
+[violations] id=sight_glass_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=gasket_material n_samples=1
+[violations] id=gasket_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=clearance n_samples=1
+[violations] id=clearance range=1 dual=0 thread=0 unknown=0
+[low-support] id=screw_size n_samples=1
+[violations] id=screw_size range=0 dual=0 thread=0 unknown=1
+[low-support] id=for_use_with_make n_samples=1
+[violations] id=for_use_with_make range=0 dual=0 thread=0 unknown=1
+[low-support] id=compatible_part_model_number n_samples=1
+[violations] id=compatible_part_model_number range=0 dual=0 thread=0 unknown=1
+[low-support] id=frame_color_family n_samples=1
+[violations] id=frame_color_family range=0 dual=0 thread=0 unknown=1
+[low-support] id=frame_material n_samples=1
+[violations] id=frame_material range=0 dual=0 thread=0 unknown=1
+[low-support] id=mil_thickness n_samples=1
+[violations] id=mil_thickness range=0 dual=0 thread=0 unknown=1
+[low-support] id=load_solid_weight n_samples=1
+[low-support] id=coarse_or_fine_thread n_samples=1
+[violations] id=coarse_or_fine_thread range=0 dual=0 thread=0 unknown=1
+[low-support] id=overall_frame_height n_samples=1
+[violations] id=overall_frame_height range=1 dual=0 thread=0 unknown=0
+[low-support] id=opening_height n_samples=1
+[violations] id=opening_height range=1 dual=0 thread=0 unknown=0
+[low-support] id=opening_depth n_samples=1
+[violations] id=opening_depth range=1 dual=0 thread=0 unknown=0
+[low-support] id=opening_width n_samples=1
+[low-support] id=dimension_b n_samples=1
+[low-support] id=dimension_l4 n_samples=1
+[low-support] id=d2_tapped n_samples=1
+[low-support] id=l2_min n_samples=1
+[low-support] id=bore n_samples=1
+[low-support] id=packing_type n_samples=1
+[violations] id=packing_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=crown_width n_samples=1
+[low-support] id=leg_length n_samples=1
+[low-support] id=machine_compatibility n_samples=1
+[violations] id=machine_compatibility range=0 dual=0 thread=0 unknown=1
+[low-support] id=staple_type n_samples=1
+[violations] id=staple_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=sheet_capacity n_samples=1
+[low-support] id=peel_apart_strength_piw n_samples=1
+[low-support] id=shear_strength n_samples=1
+[low-support] id=psi n_samples=1
+[low-support] id=cfm n_samples=1
+[low-support] id=connection_configuration n_samples=1
+[violations] id=connection_configuration range=0 dual=0 thread=0 unknown=1
+[low-support] id=made_in_the_usa n_samples=1
+[violations] id=made_in_the_usa range=0 dual=0 thread=0 unknown=1
+[low-support] id=max_operating_psi n_samples=1
+[low-support] id=voltage n_samples=1
+[violations] id=voltage range=1 dual=0 thread=0 unknown=0
+[low-support] id=base_height_l2 n_samples=1
+[low-support] id=hex_flats_a_f n_samples=1
+[low-support] id=base_diameter_d1 n_samples=1
+[low-support] id=pad_height_l3 n_samples=1
+[low-support] id=thread_length_l1 n_samples=1
+[low-support] id=plate_thickness n_samples=1
+[low-support] id=mounting_hole_diameter n_samples=1
+[low-support] id=spindle_thread n_samples=1
+[low-support] id=ball_diameter n_samples=1
+[violations] id=ball_diameter range=0 dual=0 thread=0 unknown=1
+[low-support] id=handle_diameter n_samples=1
+[low-support] id=cooking_surface n_samples=1
+[violations] id=cooking_surface range=0 dual=0 thread=0 unknown=1
+[low-support] id=fuel_type n_samples=1
+[violations] id=fuel_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=mounting_style n_samples=1
+[violations] id=mounting_style range=0 dual=0 thread=0 unknown=1
+[low-support] id=base n_samples=1
+[violations] id=base range=1 dual=0 thread=0 unknown=0
+[low-support] id=ctc n_samples=1
+[low-support] id=offset n_samples=1
+[low-support] id=wheel_diameter n_samples=1
+[low-support] id=wheel_type n_samples=1
+[violations] id=wheel_type range=0 dual=0 thread=0 unknown=1
+[low-support] id=stackable n_samples=1
+[violations] id=stackable range=0 dual=0 thread=0 unknown=1
+[low-support] id=casters n_samples=1
+[violations] id=casters range=0 dual=0 thread=0 unknown=1
+[low-support] id=capacity n_samples=1
+[violations] id=capacity range=0 dual=0 thread=0 unknown=1
+[low-support] id=shape n_samples=1
+[violations] id=shape range=0 dual=0 thread=0 unknown=1
+[low-support] id=military_standard_equivalent n_samples=1
+[violations] id=military_standard_equivalent range=0 dual=0 thread=0 unknown=1

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(python3 -m json.tool:*)",
+      "Bash(python3:*)",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []
