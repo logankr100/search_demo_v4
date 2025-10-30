@@ -8,6 +8,9 @@
 *.csv
 *.json
 !requirements.txt
+!frontend/package.json
+!frontend/vite.config.js
+!frontend/**/*.json
 
 # Audit directories
 audit/
