@@ -73,7 +73,7 @@ MM_PAT = r'(?:mm|millimeter(?:s)?)'
 FT_PAT = r"(?:ft|foot|feet|')"
 UNIT_PAT = rf"(?:{IN_PAT}|{MM_PAT}|{FT_PAT})"
 
-# Greedy scalar patterns on either side of alias
+# Legacy patterns (kept for fallback)
 RE_RIGHT = re.compile(rf'^\s*(?:=|:)?\s*({NUM_OR_FRAC})\s*({UNIT_PAT})?\b', re.I)
 RE_LEFT  = re.compile(rf'({NUM_OR_FRAC})\s*({UNIT_PAT})?\s*$', re.I)
 
@@ -90,6 +90,396 @@ def _parse_number(s: str) -> Optional[float]:
         return float(s)
     except Exception:
         return None
+
+# ==================== NEW LAYERED EXTRACTION SYSTEM ====================
+
+# Precompiled regex patterns for direct extraction
+# Pattern for mixed fractions: 1-1/2, 1 1/2
+MIXED_FRAC = r'\d+\s*[-]\s*\d+/\d+'
+# Pattern for simple fractions: 1/2, 3/4, etc.
+SIMPLE_FRAC = r'\d+/\d+'
+# Pattern for decimal numbers: 1.5, 2.25, etc.
+DECIMAL = r'\d+(?:\.\d+)?'
+# Combined number pattern
+NUMBER_PATTERN = rf'(?:{MIXED_FRAC}|{SIMPLE_FRAC}|{DECIMAL})'
+
+# Unit patterns expanded
+LENGTH_UNITS = r'(?:in|inch|inches|"|mm|millimeter|millimeters|cm|centimeter|centimeters|ft|foot|feet|\'|m|meter|meters)'
+PRESSURE_UNITS = r'(?:psi|psig|psia|bar|kpa|mpa)'
+WEIGHT_UNITS = r'(?:lb|lbs|pound|pounds|kg|kilogram|kilograms|g|gram|grams)'
+TORQUE_UNITS = r'(?:lb-ft|lbft|ft-lb|ftlb|nm|newton-meter|newton-meters)'
+ALL_UNITS = rf'(?:{LENGTH_UNITS}|{PRESSURE_UNITS}|{WEIGHT_UNITS}|{TORQUE_UNITS})'
+
+# Dimension patterns with context
+DIMENSION_PATTERN = re.compile(
+    rf'({NUMBER_PATTERN})\s*({LENGTH_UNITS})(?:\b|$)',
+    re.IGNORECASE
+)
+
+# Thread patterns
+METRIC_THREAD = re.compile(r'\bM(\d+(?:\.\d+)?)(?:\s*[xX×]\s*(\d+(?:\.\d+)?))?\b', re.I)
+IMPERIAL_THREAD = re.compile(r'\b(?:#?)?(\d+(?:/\d+)?)-(\d{2,3})(?:\s*(UNC|UNF|UN))?\b', re.I)
+NPT_THREAD = re.compile(rf'\b({NUMBER_PATTERN})\s*["\'"]?\s*NPT\b', re.I)
+
+# Generic numeric with unit pattern
+NUMERIC_VALUE = re.compile(
+    rf'({NUMBER_PATTERN})\s*({ALL_UNITS})(?:\b|$)',
+    re.IGNORECASE
+)
+
+# Triple dimension pattern: 2 x 3 x 4 in
+TRIPLE_DIM = re.compile(
+    rf'({NUMBER_PATTERN})\s*[xX×]\s*({NUMBER_PATTERN})\s*[xX×]\s*({NUMBER_PATTERN})\s*({LENGTH_UNITS})',
+    re.IGNORECASE
+)
+
+# Context to field mapping
+CONTEXT_TO_FIELD = {
+    # Wheel/caster related
+    'wheel': 'wheel_diameter',
+    'caster': 'wheel_diameter', 
+    'wheels': 'wheel_diameter',
+    'casters': 'wheel_diameter',
+    
+    # Base/mounting related
+    'base': 'base_diameter',
+    'mount': 'mount_hole_diameter',
+    'mounting': 'mounting_hole_diameter',
+    'hole': 'hole_diameter',
+    
+    # Body related
+    'body': 'body_diameter',
+    'shaft': 'body_diameter',
+    
+    # Flange related
+    'flange': 'flange_diameter',
+    
+    # Handle related
+    'handle': 'handle_diameter',
+    
+    # Generic dimensions
+    'length': 'length',
+    'height': 'height', 
+    'width': 'width',
+    'depth': 'depth',
+    'thick': 'thickness',
+    'thickness': 'thickness',
+    'diameter': 'diameter',
+    'dia': 'diameter',
+    
+    # Thread related
+    'thread': 'thread_size',
+    'threads': 'thread_size',
+    
+    # Weight related
+    'weight': 'weight',
+    'capacity': 'weight_capacity',
+    'load': 'weight_capacity',
+    
+    # Other common terms
+    'size': 'size',
+    'bolt': 'bolt_size',
+    'screw': 'bolt_size'
+}
+
+def parse_mixed_fraction(frac_str: str) -> Optional[float]:
+    """Parse mixed fractions like '1-1/2' or '1 1/2' into float."""
+    frac_str = frac_str.strip()
+    try:
+        if '-' in frac_str and '/' in frac_str:
+            # Mixed fraction with hyphen: 1-1/2
+            whole_part, frac_part = frac_str.split('-', 1)
+            whole = int(whole_part.strip())
+            if '/' in frac_part:
+                num, den = frac_part.split('/', 1)
+                return float(whole + int(num.strip()) / int(den.strip()))
+        elif ' ' in frac_str and '/' in frac_str:
+            # Mixed fraction with space: 1 1/2
+            parts = frac_str.split()
+            if len(parts) == 2:
+                whole = int(parts[0])
+                if '/' in parts[1]:
+                    num, den = parts[1].split('/', 1)
+                    return float(whole + int(num) / int(den))
+        elif '/' in frac_str:
+            # Simple fraction: 1/2
+            num, den = frac_str.split('/', 1)
+            return float(int(num.strip()) / int(den.strip()))
+        else:
+            # Regular decimal or integer
+            return float(frac_str)
+    except Exception:
+        return None
+    return None
+
+def find_context_field(query: str, match_pos: Tuple[int, int], available_fields: set) -> Optional[str]:
+    """Find the most likely field based on context words around a numeric match."""
+    start, end = match_pos
+    # Look in a window around the match
+    window_start = max(0, start - 50)
+    window_end = min(len(query), end + 50)
+    context = query[window_start:window_end].lower()
+    
+    # Score potential fields based on context keywords
+    field_scores = {}
+    
+    for keyword, field in CONTEXT_TO_FIELD.items():
+        if field in available_fields and keyword in context:
+            # Closer keywords get higher scores
+            keyword_pos = context.find(keyword)
+            if keyword_pos != -1:
+                distance = abs(keyword_pos - (start - window_start))
+                field_scores[field] = 1.0 / (1.0 + distance / 10.0)
+    
+    if field_scores:
+        return max(field_scores.items(), key=lambda x: x[1])[0]
+    
+    return None
+
+def extract_query_constraints(query: str, alias_map: Dict[str, str], schema_attrs: List[str], families_of: Dict[str, Optional[str]]) -> List[Dict[str, Any]]:
+    """Extract constraints using layered approach: direct regex + alias-guided."""
+    constraints = []
+    processed_spans = []  # Track processed text spans to avoid duplicates
+    available_fields = set(schema_attrs)
+    # Also include known text fields for thread constraints
+    text_fields = {'thread_size', 'thread', 'thread_type', 'threading_type'}  # Add known text fields
+    
+    # Layer 1: Direct regex extraction
+    
+    # 1.1 Thread patterns (highest priority)
+    for pattern, thread_type in [(METRIC_THREAD, 'metric'), (IMPERIAL_THREAD, 'imperial'), (NPT_THREAD, 'npt')]:
+        for match in pattern.finditer(query):
+            span = (match.start(), match.end())
+            if any(overlap_spans(span, existing) for existing in processed_spans):
+                continue
+                
+            if thread_type == 'metric':
+                # M10 x 1.5 or just M10
+                diameter = match.group(1)
+                pitch = match.group(2) if match.group(2) else None
+                if pitch:
+                    thread_str = f"M{diameter}x{pitch}"
+                else:
+                    thread_str = f"M{diameter}"
+            elif thread_type == 'imperial':
+                # 1/4-20 or #10-32
+                size = match.group(1)
+                tpi = match.group(2)
+                std = match.group(3) if len(match.groups()) > 2 and match.group(3) else None
+                if std:
+                    thread_str = f"{size}-{tpi} {std}"
+                else:
+                    thread_str = f"{size}-{tpi}"
+            else:  # NPT
+                size = match.group(1)
+                thread_str = f"{size} NPT"
+            
+            if 'thread_size' in available_fields or 'thread_size' in text_fields:
+                constraints.append({
+                    'field_id': 'thread_size',
+                    'value': thread_str,
+                    'family': 'thread',
+                    'match_type': 'regex',
+                    'is_text': True
+                })
+                processed_spans.append(span)
+    
+    # 1.2 Triple dimensions: 2 x 3 x 4 in
+    for match in TRIPLE_DIM.finditer(query):
+        span = (match.start(), match.end())
+        if any(overlap_spans(span, existing) for existing in processed_spans):
+            continue
+            
+        dim1_str, dim2_str, dim3_str, unit = match.groups()
+        dim1 = parse_mixed_fraction(dim1_str)
+        dim2 = parse_mixed_fraction(dim2_str)
+        dim3 = parse_mixed_fraction(dim3_str)
+        
+        if all(d is not None for d in [dim1, dim2, dim3]):
+            unit_canonical = convert_to_canonical('length', 1.0, unit)
+            if unit_canonical is not None:
+                # Store as length, width, height if those fields exist
+                # Otherwise store as generic length constraint
+                dimensions = [dim1, dim2, dim3]
+                field_candidates = ['length', 'width', 'height']
+                
+                for i, (dim, field) in enumerate(zip(dimensions, field_candidates)):
+                    if field in available_fields:
+                        canonical_value = dim * unit_canonical
+                        constraints.append({
+                            'field_id': field,
+                            'value': canonical_value,
+                            'family': 'length', 
+                            'match_type': 'regex'
+                        })
+                processed_spans.append(span)
+    
+    # 1.3 Single dimensions with context
+    for match in DIMENSION_PATTERN.finditer(query):
+        span = (match.start(), match.end())
+        if any(overlap_spans(span, existing) for existing in processed_spans):
+            continue
+            
+        value_str, unit = match.groups()
+        value = parse_mixed_fraction(value_str)
+        
+        if value is not None:
+            # Convert to canonical units (inches)
+            canonical_value = convert_to_canonical('length', value, unit)
+            if canonical_value is not None:
+                # Look for context to determine field
+                context_field = find_context_field(query, span, available_fields)
+                
+                if context_field:
+                    constraints.append({
+                        'field_id': context_field,
+                        'value': canonical_value,
+                        'family': families_of.get(context_field, 'length'),
+                        'match_type': 'regex+context'
+                    })
+                    processed_spans.append(span)
+                else:
+                    # Store as generic length constraint for fallback
+                    constraints.append({
+                        'field_id': 'length',  # Generic fallback
+                        'value': canonical_value,
+                        'family': 'length',
+                        'match_type': 'regex+fallback'
+                    })
+                    processed_spans.append(span)
+    
+    # 1.4 Other numeric values with units (pressure, weight, etc.)
+    for match in NUMERIC_VALUE.finditer(query):
+        span = (match.start(), match.end())
+        if any(overlap_spans(span, existing) for existing in processed_spans):
+            continue
+            
+        value_str, unit = match.groups()
+        value = parse_mixed_fraction(value_str)
+        
+        if value is not None:
+            # Determine family from unit
+            unit_lower = unit.lower()
+            family = None
+            if unit_lower in ['psi', 'psig', 'psia', 'bar', 'kpa', 'mpa']:
+                family = 'pressure'
+            elif unit_lower in ['lb', 'lbs', 'pound', 'pounds', 'kg', 'kilogram', 'kilograms', 'g', 'gram', 'grams']:
+                family = 'mass'
+            elif unit_lower in ['lb-ft', 'lbft', 'ft-lb', 'ftlb', 'nm', 'newton-meter', 'newton-meters']:
+                family = 'torque'
+            
+            if family:
+                canonical_value = convert_to_canonical(family, value, unit)
+                if canonical_value is not None:
+                    # Look for context field or use family-appropriate field
+                    context_field = find_context_field(query, span, available_fields)
+                    if not context_field:
+                        # Use family-based field selection
+                        if family == 'mass' and 'weight' in available_fields:
+                            context_field = 'weight'
+                        elif family == 'pressure' and any(f.endswith('pressure') for f in available_fields):
+                            context_field = next(f for f in available_fields if f.endswith('pressure'))
+                    
+                    if context_field and context_field in available_fields:
+                        constraints.append({
+                            'field_id': context_field,
+                            'value': canonical_value,
+                            'family': family,
+                            'match_type': 'regex+unit'
+                        })
+                        processed_spans.append(span)
+    
+    # Layer 2: Alias-guided extraction (supplement/fallback)
+    alias_patterns = build_alias_patterns(alias_map)
+    hits = find_alias_hits(query, alias_patterns)
+    
+    for (s, e, fid) in hits:
+        span = (s, e)
+        # Skip if this area was already processed by regex
+        if any(overlap_spans(span, existing) for existing in processed_spans):
+            continue
+            
+        family = families_of.get(fid)
+        # Use improved scalar classification with wider search window
+        cls = classify_nearby_scalar_improved(query, (s, e), family)
+        if cls:
+            val_raw, unit_raw = cls
+            vcanon = convert_to_canonical(family, val_raw, unit_raw)
+            if vcanon is not None:
+                constraints.append({
+                    'field_id': fid,
+                    'value': float(vcanon),
+                    'family': family,
+                    'match_type': 'alias'
+                })
+    
+    return constraints
+
+def overlap_spans(span1: Tuple[int, int], span2: Tuple[int, int]) -> bool:
+    """Check if two spans overlap."""
+    s1, e1 = span1
+    s2, e2 = span2
+    return not (e1 <= s2 or s1 >= e2)
+
+def classify_nearby_scalar_improved(query: str, span: Tuple[int,int], family_hint: Optional[str]) -> Optional[Tuple[float, Optional[str]]]:
+    """Improved version with wider search and better regex patterns."""
+    L, R = span
+    q_norm = _to_ascii_fracs(query)
+    # Much wider search window
+    W = 80
+    left  = q_norm[max(0, L - W): L]
+    right = q_norm[R: min(len(q_norm), R + W)]
+    around = q_norm[max(0, L - W): min(len(q_norm), R + W)]
+    
+    # Try classifier first
+    try:
+        cl = classify_value_relaxed(around) if HAVE_RELAXED else classify_value_strict(around)
+    except Exception:
+        cl = None
+    if cl and cl.get("kind") == "scalar":
+        val = cl.get("value")
+        unit = cl.get("unit")
+        if val is not None:
+            return float(val), (unit if unit else None)
+    
+    # Enhanced regex search - look both directions with more flexible patterns
+    enhanced_number = rf'({NUMBER_PATTERN})'
+    enhanced_unit = rf'({ALL_UNITS})'
+    
+    # Try right side first (alias: value pattern)
+    right_pattern = re.compile(rf'\s*(?:=|:|is|of)?\s*{enhanced_number}\s*{enhanced_unit}?', re.I)
+    m = right_pattern.search(right)
+    if m:
+        val = parse_mixed_fraction(m.group(1))
+        unit = m.group(2) if len(m.groups()) > 1 and m.group(2) else None
+        if val is not None:
+            return val, unit.lower() if unit else None
+    
+    # Try left side (value alias pattern)
+    left_pattern = re.compile(rf'{enhanced_number}\s*{enhanced_unit}?\s*$', re.I)
+    m = left_pattern.search(left)
+    if m:
+        val = parse_mixed_fraction(m.group(1))
+        unit = m.group(2) if len(m.groups()) > 1 and m.group(2) else None
+        if val is not None:
+            return val, unit.lower() if unit else None
+    
+    # Fall back to original patterns
+    m = RE_RIGHT.search(right)
+    if m:
+        num_s, unit_s = m.group(1), m.group(2)
+        val = _parse_number(num_s)
+        if val is not None:
+            return val, (unit_s.lower() if unit_s else None)
+    
+    m = RE_LEFT.search(left)
+    if m:
+        num_s, unit_s = m.group(1), m.group(2)
+        val = _parse_number(num_s)
+        if val is not None:
+            return val, (unit_s.lower() if unit_s else None)
+    
+    return None
 
 # --------- spec parsing / τ tolerances (from your local module) ----------
 try:
@@ -462,63 +852,80 @@ def main():
         if matches:
             sku_first = matches[0]
 
-    # ---------- Hard-spec extraction ----------
+    # ---------- Hard-spec extraction (NEW LAYERED APPROACH) ----------
     t0 = tnow()
-    hits = find_alias_hits(full_query, alias_patterns)  # [(s,e,fid),...]
-    constraints: List[Dict[str, Any]] = []
-    for (s, e, fid) in hits:
-        family = families_of.get(fid)
-        cls = classify_nearby_scalar(full_query, (s, e), family)
-        if not cls:
-            continue
-        val_raw, unit_raw = cls
-        vcanon = convert_to_canonical(family, val_raw, unit_raw)
-        if vcanon is None:
-            continue
-        constraints.append({
-            "field_id": fid,
-            "family": family,
-            "value": float(vcanon)
-        })
+    constraints: List[Dict[str, Any]] = extract_query_constraints(
+        full_query, alias_map, schema_attrs, families_of
+    )
 
-    if args.debug and hits and not constraints:
-        print(f"[debug] alias windows (no scalar found):")
-        for (s, e, fid) in hits:
-            W = 48
-            qn = _to_ascii_fracs(full_query)
-            left  = qn[max(0, s - W): s]
-            mid   = qn[s:e]
-            right = qn[e: min(len(qn), e + W)]
-            print(f"  - {fid}: ...[{left}]<{mid}>[{right}]...")
-        
-    t1 = tnow()
-
+    # Debug output for extraction
     if args.debug:
+        # Show all regex matches for debugging
         print(f"[debug] object='{obj_query}'")
+        print("[debug] regex pattern matches:")
+        for pattern, name in [(DIMENSION_PATTERN, 'dimensions'), (METRIC_THREAD, 'metric_threads'), 
+                              (IMPERIAL_THREAD, 'imperial_threads'), (NPT_THREAD, 'npt_threads')]:
+            matches = list(pattern.finditer(full_query))
+            if matches:
+                print(f"  - {name}: {[m.group() for m in matches]}")
+            else:
+                print(f"  - {name}: none")
+        
+        # Show alias hits for comparison
+        alias_patterns = build_alias_patterns(alias_map)
+        hits = find_alias_hits(full_query, alias_patterns)
         if hits:
             print("[debug] alias hits:")
             for (s,e,fid) in hits:
                 print(f"  - [{s}:{e}] -> {fid!r} :: '{full_query[s:e]}'")
+        else:
+            print("[debug] alias hits: none")
+        
         if constraints:
-            print("[debug] constraints (canonical units):")
+            print("[debug] extracted constraints:")
             for c in constraints:
-                tau, is_rel = get_tau(c["field_id"], c["family"])
-                print(f"  - {c['field_id']} = {c['value']} (family={c['family']}, tau={tau}{' rel' if is_rel else ''})")
+                tau, is_rel = get_tau(c["field_id"], c.get("family"))
+                if c.get('is_text'):
+                    print(f"  - {c['field_id']} = '{c['value']}' (family={c.get('family')}, match_type={c.get('match_type')})")
+                else:
+                    print(f"  - {c['field_id']} = {c['value']} (family={c.get('family')}, tau={tau}{' rel' if is_rel else ''}, match_type={c.get('match_type')})")
         else:
             print("[debug] no hard constraints extracted")
+        
+    t1 = tnow()
+    if args.debug:
         print(f"[timing] extract hard-specs: {t1 - t0:.3f}s")
 
     # ---------- Shortlist ----------
     t2 = tnow()
     short_ids: Optional[np.ndarray] = None
-    if constraints:
+    numeric_constraints = [c for c in constraints if not c.get('is_text', False)]
+    if numeric_constraints:
         keep = np.ones(values.shape[0], dtype=bool)
-        for c in constraints:
+        for c in numeric_constraints:
             fid, v = c["field_id"], c["value"]
             j = COL_OF.get(fid)
             if j is None:
+                # Try family-based fallback for generic fields like 'length'
+                if fid == 'length' and c.get('match_type') == 'regex+fallback':
+                    # This is a generic length constraint - try to match any length field
+                    length_fields = [f for f in schema_attrs if families_of.get(f) == 'length']
+                    fallback_keep = np.zeros(values.shape[0], dtype=bool)
+                    for length_field in length_fields:
+                        lj = COL_OF.get(length_field)
+                        if lj is not None:
+                            tau, is_rel = get_tau(length_field, c.get("family"))
+                            if is_rel:
+                                tau_abs = max(1e-9, abs(v) * float(tau))
+                            else:
+                                tau_abs = float(tau)
+                            has = mask[:, lj]
+                            diff = np.abs(values[:, lj] - v)
+                            cond = has & (diff <= tau_abs)
+                            fallback_keep |= cond
+                    keep &= fallback_keep
                 continue
-            tau, is_rel = get_tau(fid, c["family"])
+            tau, is_rel = get_tau(fid, c.get("family"))
             if is_rel:
                 # relative tolerance (e.g., ±5% of target)
                 tau_abs = max(1e-9, abs(v) * float(tau))
@@ -614,15 +1021,30 @@ def main():
 
     # Numeric boost
     def num_boost(i: int) -> float:
-        if not constraints:
+        if not numeric_constraints:
             return 0.0
         scores = []
-        for c in constraints:
+        for c in numeric_constraints:
             fid, v = c["field_id"], c["value"]
             j = COL_OF.get(fid)
             if j is None or not mask[i, j]:
+                # Try family fallback for generic constraints
+                if fid == 'length' and c.get('match_type') == 'regex+fallback':
+                    length_fields = [f for f in schema_attrs if families_of.get(f) == 'length']
+                    fallback_scores = []
+                    for length_field in length_fields:
+                        lj = COL_OF.get(length_field)
+                        if lj is not None and mask[i, lj]:
+                            tau, is_rel = get_tau(length_field, c.get("family"))
+                            tau_abs = (abs(v) * tau) if is_rel else tau
+                            tau_abs = float(tau_abs) if tau_abs else 1e-6
+                            x = values[i, lj]
+                            s = float(np.exp(-abs(x - v) / tau_abs))
+                            fallback_scores.append(s)
+                    if fallback_scores:
+                        scores.append(max(fallback_scores))  # Best match among length fields
                 continue
-            tau, is_rel = get_tau(fid, c["family"])
+            tau, is_rel = get_tau(fid, c.get("family"))
             tau_abs = (abs(v) * tau) if is_rel else tau
             tau_abs = float(tau_abs) if tau_abs else 1e-6
             x = values[i, j]

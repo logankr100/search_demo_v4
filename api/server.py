@@ -8,8 +8,11 @@ from flask_cors import CORS
 import sys
 import json
 import time
+import re
+import unicodedata
 from pathlib import Path
 import numpy as np
+from typing import Dict, List, Tuple, Optional, Any
 
 # Add parent directory to path to import search modules
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -87,6 +90,227 @@ def get_embedding(text, model="text-embedding-3-small"):
         input=text
     )
     return np.array(response.data[0].embedding, dtype=np.float32)
+
+
+# ==================== LAYERED EXTRACTION SYSTEM ====================
+
+# Unicode fraction mapping
+UNICODE_FRAC = {"½":"1/2","¼":"1/4","¾":"3/4","⅛":"1/8","⅜":"3/8","⅝":"5/8","⅞":"7/8"}
+
+def _to_ascii_fracs(text: str) -> str:
+    if not isinstance(text, str):
+        return ""
+    t = unicodedata.normalize("NFKD", text)
+    for u, r in UNICODE_FRAC.items():
+        t = t.replace(u, r)
+    return t
+
+# Pattern for mixed fractions: 1-1/2, 1 1/2
+MIXED_FRAC = r'\d+\s*[-]\s*\d+/\d+'
+# Pattern for simple fractions: 1/2, 3/4, etc.
+SIMPLE_FRAC = r'\d+/\d+'
+# Pattern for decimal numbers: 1.5, 2.25, etc.
+DECIMAL = r'\d+(?:\.\d+)?'
+# Combined number pattern
+NUMBER_PATTERN = rf'(?:{MIXED_FRAC}|{SIMPLE_FRAC}|{DECIMAL})'
+
+# Unit patterns
+LENGTH_UNITS = r'(?:in|inch|inches|"|mm|millimeter|millimeters|cm|centimeter|centimeters|ft|foot|feet|\'|m|meter|meters)'
+PRESSURE_UNITS = r'(?:psi|psig|psia|bar|kpa|mpa)'
+WEIGHT_UNITS = r'(?:lb|lbs|pound|pounds|kg|kilogram|kilograms|g|gram|grams)'
+ALL_UNITS = rf'(?:{LENGTH_UNITS}|{PRESSURE_UNITS}|{WEIGHT_UNITS})'
+
+# Dimension patterns with context
+DIMENSION_PATTERN = re.compile(
+    rf'({NUMBER_PATTERN})\s*({LENGTH_UNITS})(?:\b|$)',
+    re.IGNORECASE
+)
+
+# Thread patterns
+METRIC_THREAD = re.compile(r'\bM(\d+(?:\.\d+)?)(?:\s*[xX×]\s*(\d+(?:\.\d+)?))?\b', re.I)
+IMPERIAL_THREAD = re.compile(r'\b(?:#?)?(\d+(?:/\d+)?)-(\d{2,3})(?:\s*(UNC|UNF|UN))?\b', re.I)
+NPT_THREAD = re.compile(rf'\b({NUMBER_PATTERN})\s*["\'"]?\s*NPT\b', re.I)
+
+# Context to field mapping
+CONTEXT_TO_FIELD = {
+    'wheel': 'wheel_diameter',
+    'caster': 'wheel_diameter', 
+    'base': 'base_diameter',
+    'mount': 'mount_hole_diameter',
+    'mounting': 'mounting_hole_diameter',
+    'hole': 'hole_diameter',
+    'body': 'body_diameter',
+    'flange': 'flange_diameter',
+    'handle': 'handle_diameter',
+    'length': 'length',
+    'height': 'height', 
+    'width': 'width',
+    'depth': 'depth',
+    'thick': 'thickness',
+    'thickness': 'thickness',
+    'diameter': 'diameter',
+    'dia': 'diameter',
+    'thread': 'thread_size',
+    'weight': 'weight',
+    'size': 'size'
+}
+
+def parse_mixed_fraction(frac_str: str) -> Optional[float]:
+    """Parse mixed fractions like '1-1/2' or '1 1/2' into float."""
+    frac_str = frac_str.strip()
+    try:
+        if '-' in frac_str and '/' in frac_str:
+            whole_part, frac_part = frac_str.split('-', 1)
+            whole = int(whole_part.strip())
+            if '/' in frac_part:
+                num, den = frac_part.split('/', 1)
+                return float(whole + int(num.strip()) / int(den.strip()))
+        elif ' ' in frac_str and '/' in frac_str:
+            parts = frac_str.split()
+            if len(parts) == 2:
+                whole = int(parts[0])
+                if '/' in parts[1]:
+                    num, den = parts[1].split('/', 1)
+                    return float(whole + int(num) / int(den))
+        elif '/' in frac_str:
+            num, den = frac_str.split('/', 1)
+            return float(int(num.strip()) / int(den.strip()))
+        else:
+            return float(frac_str)
+    except Exception:
+        return None
+    return None
+
+def convert_to_canonical_server(family: Optional[str], value: float, unit: Optional[str]) -> Optional[float]:
+    """Convert units to canonical form (inches, psi, lb, etc.)."""
+    if value is None:
+        return None
+    u = (unit or "").strip().lower()
+
+    if family == "length":
+        if u in {"", None, '"', "in", "inch", "inches"}: return float(value)
+        if u in {"mm", "millimeter", "millimeters"}:     return float(value) / 25.4
+        if u in {"cm", "centimeter", "centimeters"}:     return float(value) / 2.54
+        if u in {"ft", "foot", "feet", "'"}:             return float(value) * 12.0
+        return None
+
+    if family == "pressure":
+        if u in {"", None, "psi", "psig", "psia"}:       return float(value)
+        if u == "bar":                                   return float(value) * 14.5037738
+        if u == "kpa":                                   return float(value) * 0.145037738
+        if u == "mpa":                                   return float(value) * 145.037738
+        return None
+
+    if family in {"mass", "weight"}:
+        if u in {"", None, "lb", "lbs", "pound", "pounds"}: return float(value)
+        if u in {"kg", "kilogram", "kilograms"}:            return float(value) * 2.20462262
+        if u in {"g", "gram", "grams"}:                     return float(value) * 0.00220462262
+        return None
+
+    # Unknown family: allow unitless only
+    if u in {"", None}: return float(value)
+    return None
+
+def find_context_field(query: str, match_pos: Tuple[int, int], available_fields: set) -> Optional[str]:
+    """Find the most likely field based on context words around a numeric match."""
+    start, end = match_pos
+    # Look in a window around the match
+    window_start = max(0, start - 50)
+    window_end = min(len(query), end + 50)
+    context = query[window_start:window_end].lower()
+    
+    # Score potential fields based on context keywords
+    field_scores = {}
+    
+    for keyword, field in CONTEXT_TO_FIELD.items():
+        if field in available_fields and keyword in context:
+            # Closer keywords get higher scores
+            keyword_pos = context.find(keyword)
+            if keyword_pos != -1:
+                distance = abs(keyword_pos - (start - window_start))
+                field_scores[field] = 1.0 / (1.0 + distance / 10.0)
+    
+    if field_scores:
+        return max(field_scores.items(), key=lambda x: x[1])[0]
+    
+    return None
+
+def extract_query_constraints_server(query: str, schema_attrs: List[str]) -> List[Dict[str, Any]]:
+    """Extract constraints from query using layered approach."""
+    constraints = []
+    processed_spans = []
+    available_fields = set(schema_attrs)
+    # Also include known text fields for thread constraints  
+    text_fields = {'thread_size', 'thread', 'thread_type', 'threading_type'}
+    
+    # Layer 1: Thread patterns (highest priority)
+    for pattern, thread_type in [(METRIC_THREAD, 'metric'), (IMPERIAL_THREAD, 'imperial'), (NPT_THREAD, 'npt')]:
+        for match in pattern.finditer(query):
+            span = (match.start(), match.end())
+            if any(overlap_spans(span, existing) for existing in processed_spans):
+                continue
+                
+            if thread_type == 'metric':
+                diameter = match.group(1)
+                pitch = match.group(2) if match.group(2) else None
+                if pitch:
+                    thread_str = f"M{diameter}x{pitch}"
+                else:
+                    thread_str = f"M{diameter}"
+            elif thread_type == 'imperial':
+                size = match.group(1)
+                tpi = match.group(2)
+                std = match.group(3) if len(match.groups()) > 2 and match.group(3) else None
+                if std:
+                    thread_str = f"{size}-{tpi} {std}"
+                else:
+                    thread_str = f"{size}-{tpi}"
+            else:  # NPT
+                size = match.group(1)
+                thread_str = f"{size} NPT"
+            
+            if 'thread_size' in available_fields or 'thread_size' in text_fields:
+                constraints.append({
+                    'field': 'thread_size',
+                    'value': thread_str,
+                    'tolerance': 0.0,  # Exact match for text
+                    'match_type': 'regex_thread'
+                })
+                processed_spans.append(span)
+    
+    # Layer 2: Dimension patterns
+    for match in DIMENSION_PATTERN.finditer(query):
+        span = (match.start(), match.end())
+        if any(overlap_spans(span, existing) for existing in processed_spans):
+            continue
+            
+        value_str, unit = match.groups()
+        value = parse_mixed_fraction(value_str)
+        
+        if value is not None:
+            canonical_value = convert_to_canonical_server('length', value, unit)
+            if canonical_value is not None:
+                # Look for context to determine field
+                context_field = find_context_field(query, span, available_fields)
+                
+                if context_field and context_field in available_fields:
+                    # Use more generous tolerance for better matches
+                    tolerance = 0.25 if canonical_value > 1.0 else 0.125  # 1/4" for larger dimensions
+                    constraints.append({
+                        'field': context_field,
+                        'value': canonical_value,
+                        'tolerance': tolerance,
+                        'match_type': 'regex_context'
+                    })
+                    processed_spans.append(span)
+    
+    return constraints
+
+def overlap_spans(span1: Tuple[int, int], span2: Tuple[int, int]) -> bool:
+    """Check if two spans overlap."""
+    s1, e1 = span1
+    s2, e2 = span2
+    return not (e1 <= s2 or s1 >= e2)
 
 
 def extract_object_query(query_text):
@@ -287,10 +511,17 @@ def search():
         alias_hits = detect_aliases(query_text, data["alias_map"])
         timings["alias_detection"] = time.time() - t1
 
+        # Extract constraints from query using new layered approach
+        t1_5 = time.time()
+        extracted_constraints = extract_query_constraints_server(query_text, data["numeric_schema"]["attrs"])
+        # Merge with manually provided constraints
+        all_constraints = constraints + extracted_constraints
+        timings["constraint_extraction"] = time.time() - t1_5
+
         # Build numeric shortlist
         t2 = time.time()
         shortlist_indices, matched_constraints = build_numeric_shortlist(
-            constraints,
+            all_constraints,
             data["numeric_values"],
             data["numeric_mask"],
             data["numeric_schema"]
@@ -303,21 +534,13 @@ def search():
         query_vec_obj = get_embedding(object_query) if object_query != query_text else query_vec_full
         timings["embedding"] = time.time() - t3
 
-        # Compute semantic scores for shortlist
+        # Compute semantic scores for shortlist (or all products if shortlist is empty)
         t4 = time.time()
         if len(shortlist_indices) == 0:
-            # No products match constraints
-            return jsonify({
-                "results": [],
-                "debug": {
-                    "query": query_text,
-                    "object_query": object_query,
-                    "alias_hits": alias_hits,
-                    "constraints": matched_constraints,
-                    "shortlist_size": 0,
-                    "timings": timings
-                }
-            })
+            # No products match constraints - fall back to semantic search of ALL products
+            print("[INFO] No products match constraints, falling back to semantic search of all products")
+            shortlist_indices = np.arange(len(data["meta"]))  # Use all products
+            # Note: We'll still report constraints in debug, but won't restrict the search
 
         # Compute scores for each channel
         scores_title_full = compute_semantic_scores(
@@ -351,7 +574,7 @@ def search():
         # Compute numeric boost
         t5 = time.time()
         numeric_boosts = compute_numeric_boost(
-            constraints, shortlist_indices, data["numeric_values"], data["numeric_schema"]
+            all_constraints, shortlist_indices, data["numeric_values"], data["numeric_schema"]
         )
         timings["numeric_boost"] = time.time() - t5
 
@@ -401,8 +624,9 @@ def search():
                 "query": query_text,
                 "object_query": object_query,
                 "alias_hits": alias_hits,
+                "extracted_constraints": extracted_constraints,
                 "constraints": matched_constraints,
-                "shortlist_size": len(shortlist_indices),
+                "shortlist_size": 0 if len(matched_constraints) > 0 and all(c.get('count', 0) == 0 for c in matched_constraints if c.get('matched')) else len(shortlist_indices),
                 "candidate_count": len(shortlist_indices),
                 "weights": {
                     "title": w_title,
