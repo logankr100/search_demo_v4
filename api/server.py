@@ -518,14 +518,28 @@ def search():
         all_constraints = constraints + extracted_constraints
         timings["constraint_extraction"] = time.time() - t1_5
 
-        # Build numeric shortlist
+        # Separate text constraints from numeric constraints
+        numeric_constraints = [c for c in all_constraints if c.get('match_type') != 'regex_thread']
+        text_constraints = [c for c in all_constraints if c.get('match_type') == 'regex_thread']
+        
+        # Build numeric shortlist (only with numeric constraints)
         t2 = time.time()
         shortlist_indices, matched_constraints = build_numeric_shortlist(
-            all_constraints,
+            numeric_constraints,
             data["numeric_values"],
             data["numeric_mask"],
             data["numeric_schema"]
         )
+        
+        # Add text constraints as "successful" since they boost semantic search
+        for text_constraint in text_constraints:
+            matched_constraints.append({
+                **text_constraint,
+                "matched": True,
+                "count": len(data["meta"]),  # All products are candidates for semantic boosting
+                "type": "text_semantic_boost"
+            })
+        
         timings["shortlist_build"] = time.time() - t2
 
         # Get embeddings
@@ -571,11 +585,14 @@ def search():
 
         timings["semantic_scoring"] = time.time() - t4
 
-        # Compute numeric boost
+        # Compute numeric boost (only for numeric constraints)
         t5 = time.time()
         numeric_boosts = compute_numeric_boost(
-            all_constraints, shortlist_indices, data["numeric_values"], data["numeric_schema"]
+            numeric_constraints, shortlist_indices, data["numeric_values"], data["numeric_schema"]
         )
+        
+        # For text constraints, boost is already included in semantic search
+        # since the query terms (like "M6") will naturally match product descriptions
         timings["numeric_boost"] = time.time() - t5
 
         # Final scores
